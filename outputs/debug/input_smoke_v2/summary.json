@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "model_label": "Lion-7B",
+      "wrapper_family": "vicuna",
+      "effective_wrapper": "vicuna",
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": true,
+      "special_token_alignment_changed": true,
+      "parse_error_reason": "missing_answer_line"
+    },
+    {
+      "model_label": "Orca-2-7B",
+      "wrapper_family": "chatml",
+      "effective_wrapper": "chatml",
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": false,
+      "special_token_alignment_changed": true,
+      "parse_error_reason": "missing_answer_line"
+    },
+    {
+      "model_label": "Zephyr-7B-beta",
+      "wrapper_family": "plain",
+      "effective_wrapper": "plain",
+      "answer_appears": true,
+      "valid_parse": true,
+      "truncation_suspect": false,
+      "repetition_collapse": false,
+      "special_token_alignment_changed": false,
+      "parse_error_reason": null
+    },
+    {
+      "model_label": "MiniLLM-Llama-7B",
+      "wrapper_family": "base_distilled",
+      "effective_wrapper": "completion",
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": false,
+      "repetition_collapse": false,
+      "special_token_alignment_changed": true,
+      "parse_error_reason": "missing_answer_line"
+    }
+  ]
+}

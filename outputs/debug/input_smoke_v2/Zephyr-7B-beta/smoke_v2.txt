@@ -1,0 +1,52 @@
+# Wrapper Smoke v2：Zephyr-7B-beta
+
+- 使用 wrapper：`plain`
+- wrapper family：`plain`
+- fallback 原因：`none`
+- special-token 对齐是否修复：`False`
+- Answer: 是否出现：`True`
+- valid_parse：`True`
+- truncation_suspect：`False`
+- repetition_collapse：`False`
+- new_tokens：`113`
+- latency_ms：`15923.02`
+- answer_line_raw：`Answer: 112.24%`
+- parse_error_reason：`None`
+
+## raw prompt 头部 500 字符
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+## raw prompt 尾部 300 字符
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```
+
+## raw generation 前 1600 字符
+```text
+
+### Answer
+Answer: 112.24%
+
+Explanation:
+To calculate the percentage increase, we use the formula:
+(Amount 1 - Amount 2) / Amount 2 * 100%
+In this case, the amounts are the total number of shares purchased in October and November:
+(297,04 - 44,68) / 44,68 * 100% = 112.24%
+```

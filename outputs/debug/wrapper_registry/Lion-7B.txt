@@ -1,0 +1,42 @@
+# Wrapper Registry 诊断：Lion-7B
+
+- 模型路径：`/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966`
+- 是否 instruction/chat tuned：`True`
+- 模型家族：`vicuna`
+- registry 默认 wrapper：`vicuna`
+- registry 是否允许 chat_template 对照：`False`
+- 当前请求渲染模式：`registry`
+- 当前实际 wrapper：`vicuna`
+- tokenizer.chat_template 是否存在：`False`
+- 是否使用 apply_chat_template：`False`
+- fallback 原因：`none`
+- 是否存在 assistant generation boundary：`True`
+
+## special-token 对齐修复
+- 修复前：`{"tokenizer_pad_token": "[PAD]", "tokenizer_pad_token_id": 32000, "tokenizer_eos_token": "</s>", "tokenizer_eos_token_id": 2, "model_config_pad_token_id": 0, "model_config_eos_token_id": 2}`
+- 修复动作：`["set model.config.pad_token_id = tokenizer.pad_token_id"]`
+- 修复后：`{"tokenizer_pad_token": "[PAD]", "tokenizer_pad_token_id": 32000, "tokenizer_eos_token": "</s>", "tokenizer_eos_token_id": 2, "model_config_pad_token_id": 32000, "model_config_eos_token_id": 2}`
+- 是否发生修改：`True`
+
+## 渲染后 prompt 头部 500 字符
+```text
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+USER: ### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of publicly 
+```
+
+## 渲染后 prompt 尾部 300 字符
+```text
+of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+ASSISTANT:
+```

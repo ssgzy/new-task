@@ -1,0 +1,108 @@
+model_label,group,repo_id,registry_status,snapshot_path,max_new_tokens,run_status,answer_present_rate,valid_parse_rate,truncation_without_answer_rate,mean_new_tokens,p95_new_tokens,error
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,128,run_failed,,,,,,"Could not extract SentencePiece model from /Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17/tokenizer.model using sentencepiece library due to Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates. Falling back to TikToken extractor.
+Could not extract SentencePiece model from /Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17/tokenizer.model using sentencepiece library due to Couldn't build proto file into descriptor pool: duplicate file name sentencepiece_model.proto. Falling back to TikToken extractor.
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py"", line 165, in convert_to_native_format
+    local_kwargs = SentencePieceExtractor(vocab_file).extract(cls.model, **local_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 156, in __init__
+    model_pb2 = import_protobuf()
+                ^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 97, in import_protobuf
+    from sentencepiece import sentencepiece_model_pb2
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/sentencepiece/sentencepiece_model_pb2.py"", line 34, in <module>
+    _descriptor.EnumValueDescriptor(
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/google/protobuf/descriptor.py"", line 1038, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 1849, in extract_vocab_merges_from_model
+    from tiktoken.load import load_tiktoken_bpe
+ModuleNotFoundError: No module named 'tiktoken'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py"", line 649, in from_pretrained
+    return TokenizersBackend.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_base.py"", line 1712, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_base.py"", line 1897, in _from_pretrained
+    init_kwargs = cls.convert_to_native_format(**init_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py"", line 188, in convert_to_native_format
+    ).extract_vocab_merges_from_model(vocab_file)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 1851, in extract_vocab_merges_from_model
+    raise ValueError(
+ValueError: `tiktoken` is required to read a `tiktoken` file. Install it with `pip install tiktoken`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py"", line 165, in convert_to_native_format
+    local_kwargs = SentencePieceExtractor(vocab_file).extract(cls.model, **local_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 156, in __init__
+    model_pb2 = import_protobuf()
+                ^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 97, in import_protobuf
+    from sentencepiece import sentencepiece_model_pb2
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/sentencepiece/sentencepiece_model_pb2.py"", line 16, in <module>
+    DESCRIPTOR = _descriptor.FileDescriptor(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/google/protobuf/descriptor.py"", line 1390, in __new__
+    return _message.default_pool.AddSerializedFile(serialized_pb)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Couldn't build proto file into descriptor pool: duplicate file name sentencepiece_model.proto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 1849, in extract_vocab_merges_from_model
+    from tiktoken.load import load_tiktoken_bpe
+ModuleNotFoundError: No module named 'tiktoken'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/scripts/run_finqa_local_benchmark_v1.py"", line 286, in <module>
+    main()
+  File ""/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/scripts/run_finqa_local_benchmark_v1.py"", line 196, in main
+    model, tokenizer = load_model_and_tokenizer(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/scripts/run_finqa_local_benchmark_v1.py"", line 121, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=trust_remote_code)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py"", line 651, in from_pretrained
+    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_base.py"", line 1712, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_base.py"", line 1897, in _from_pretrained
+    init_kwargs = cls.convert_to_native_format(**init_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py"", line 188, in convert_to_native_format
+    ).extract_vocab_merges_from_model(vocab_file)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/miniconda/base/envs/Lion/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py"", line 1851, in extract_vocab_merges_from_model
+    raise ValueError(
+ValueError: `tiktoken` is required to read a `tiktoken` file. Install it with `pip install tiktoken`."

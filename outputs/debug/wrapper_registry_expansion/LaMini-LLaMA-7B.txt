@@ -1,0 +1,9 @@
+# Wrapper Registry Expansion：LaMini-LLaMA-7B
+
+- group：`main_candidate_expansion`
+- model_family：`instruction_distill`
+- wrapper family：`alpaca`
+- default wrapper：`alpaca`
+- allow chat_template：`False`
+- fallback wrapper：`alpaca`
+- notes：placeholder expansion candidate; repo_id is unresolved in the current round, so Alpaca-style serializer is only a provisional fallback assumption and should not be used as final evidence

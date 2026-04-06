@@ -1,0 +1,23 @@
+{
+  "model_label": "MiniLLM-Llama-7B",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_calib50.jsonl",
+  "num_examples": 50,
+  "runtime_success": 1.0,
+  "format_ok": 0.6,
+  "valid_parse": 0.2,
+  "em": 0.0,
+  "tm": 0.0,
+  "truncation_without_answer_rate": 0.12,
+  "answer_present_rate": 0.6,
+  "valid_parse_rate": 0.2,
+  "avg_latency_ms": 8110.58,
+  "mean_output_tokens": 61.56,
+  "mean_new_tokens": 61.56,
+  "p95_new_tokens": 192,
+  "tok_per_sec": 7.5901,
+  "peak_vram": 13477506048,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 192
+}

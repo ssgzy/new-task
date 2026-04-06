@@ -1,0 +1,27 @@
+{
+  "protocol_version": "v1",
+  "system_prompt": "You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>",
+  "user_prompt_template": "### Context\n{context}\n\n### Question\n{question}",
+  "decode_config": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "max_new_tokens": 256
+  },
+  "parser_rules": {
+    "answer_prefix": "Answer:",
+    "last_answer_line_only": true,
+    "allow_multiple_answer_lines": true,
+    "multiple_answer_lines_policy": "use_last_and_record_flag",
+    "numeric_literal_required": true,
+    "unit_types": [
+      "plain",
+      "percent"
+    ],
+    "truncation_suspect_rule": "text_heuristics OR (hit_max_new_tokens AND missing_answer_line)"
+  },
+  "metric_rules": {
+    "em": "numeric exact match after parser v1",
+    "tm": "math.isclose(pred, gold, rel_tol=0.01, abs_tol=0.01)"
+  }
+}

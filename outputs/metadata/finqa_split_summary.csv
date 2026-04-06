@@ -1,0 +1,4 @@
+split,official_split_name,num_examples,raw_answer_parse_success,raw_answer_parse_rate,exe_ans_parse_success,exe_ans_parse_rate,raw_exe_numeric_mismatch_count,gold_numeric_non_null,gold_numeric_null,min_context_char_len,max_context_char_len,mean_context_char_len
+train,train,6251,6251,1.0,6251,1.0,4440,6251,0,504,16117,4073.69
+validation,dev,883,883,1.0,883,1.0,623,883,0,715,9029,4015.17
+test,test,1147,1147,1.0,1147,1.0,809,1147,0,314,9010,3971.34

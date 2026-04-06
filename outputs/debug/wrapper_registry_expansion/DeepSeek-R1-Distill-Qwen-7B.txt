@@ -1,0 +1,9 @@
+# Wrapper Registry Expansion：DeepSeek-R1-Distill-Qwen-7B
+
+- group：`main_candidate_expansion`
+- model_family：`reasoning_distill`
+- wrapper family：`chatml`
+- default wrapper：`chat_template`
+- allow chat_template：`True`
+- fallback wrapper：`chatml`
+- notes：main-table expansion candidate; local tokenizer exposes chat_template, fallback to ChatML if a future snapshot removes it

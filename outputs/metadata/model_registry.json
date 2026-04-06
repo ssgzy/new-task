@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Lion-7B",
+    "group": "main",
+    "repo_id": "YuxinJiang/lion-7b",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966",
+    "resolved_revision": "a55f94073db93bca1c01ca9154c47198508dc966",
+    "num_siblings": 12,
+    "error": ""
+  },
+  {
+    "label": "Orca-2-7B",
+    "group": "main",
+    "repo_id": "microsoft/Orca-2-7b",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17",
+    "resolved_revision": "60e31e6bdcf582ad103b807cb74b73ee1d2c4b17",
+    "num_siblings": 14,
+    "error": ""
+  },
+  {
+    "label": "Zephyr-7B-beta",
+    "group": "main",
+    "repo_id": "HuggingFaceH4/zephyr-7b-beta",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
+    "resolved_revision": "892b3d7a7b1cf10c7a701c60881cd93df615734c",
+    "num_siblings": 31,
+    "error": ""
+  },
+  {
+    "label": "MiniLLM-Llama-7B",
+    "group": "main",
+    "repo_id": "MiniLLM/MiniLLM-Llama-7B",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce",
+    "resolved_revision": "21c53d1c1f8672d70595b9886ccf35d9a3ea35ce",
+    "num_siblings": 12,
+    "error": ""
+  },
+  {
+    "label": "DeepSeek-R1-Distill-Qwen-7B",
+    "group": "appendix",
+    "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+    "resolved_revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+    "num_siblings": 11,
+    "error": ""
+  },
+  {
+    "label": "OpenR1-Distill-7B",
+    "group": "appendix",
+    "repo_id": "open-r1/OpenR1-Distill-7B",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--open-r1--OpenR1-Distill-7B/snapshots/6104419ee43664a1a653c2da4857456adfcaf9b2",
+    "resolved_revision": "6104419ee43664a1a653c2da4857456adfcaf9b2",
+    "num_siblings": 23,
+    "error": ""
+  }
+]

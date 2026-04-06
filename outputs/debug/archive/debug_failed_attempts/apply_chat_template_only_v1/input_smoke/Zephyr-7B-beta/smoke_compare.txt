@@ -1,0 +1,105 @@
+# 输入有效性 Smoke：Zephyr-7B-beta
+
+## plain / repetition_penalty=1.0
+- 实际渲染模式：`plain`
+- 是否使用 chat_template：`False`
+- fallback 策略：`none`
+- tokenized input length：`539`
+- Answer: 是否出现：`True`
+- truncation_suspect：`False`
+- repetition_collapse：`False`
+- new_tokens：`128`
+- latency_ms：`14417.58`
+
+### raw prompt 前 500 字符
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+### raw prompt 后 300 字符
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```
+
+### raw generation text 前 1200 字符
+```text
+
+### Answer
+Answer: 112.24%
+
+Explanation:
+To calculate the percentage increase, we use the formula:
+(Amount 1 - Amount 2) / Amount 2 * 100%
+
+In this case, the amounts are the total number of shares purchased in October and November:
+- October: 29,704 shares
+- November: 4,468 shares
+
+The calculation is:
+((29,704 - 4,468) / 4,468)
+```
+
+## auto / repetition_penalty=1.1
+- 实际渲染模式：`chat_template`
+- 是否使用 chat_template：`True`
+- fallback 策略：`none`
+- tokenized input length：`555`
+- Answer: 是否出现：`True`
+- truncation_suspect：`False`
+- repetition_collapse：`False`
+- new_tokens：`128`
+- latency_ms：`11582.29`
+
+### raw prompt 前 500 字符
+```text
+<|system|>
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value></s>
+<|user|>
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as 
+```
+
+### raw prompt 后 300 字符
+```text
+ithheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?</s>
+<|assistant|>
+
+```
+
+### raw generation text 前 1200 字符
+```text
+Answer: To calculate the percentage increase, we first find the difference between the amounts spent:
+
+October: $ 297,04 * $ 5.99 = $ 1,774,464
+November: $ 44,68 * $ 3.24 = $ 144,784
+Difference: $ 1,639,680
+
+Next, we divide the difference by the November amount to get the percentage increase:
+
+Percentage increase = (Difference / November amount) * 1
+```
+

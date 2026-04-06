@@ -1,0 +1,97 @@
+{
+  "model_label": "OpenR1-Distill-7B",
+  "group": "main_candidate_expansion",
+  "model_family": "long_reasoning_distill",
+  "repo_id": "open-r1/OpenR1-Distill-7B",
+  "registry_status": "available_local",
+  "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--open-r1--OpenR1-Distill-7B/snapshots/6104419ee43664a1a653c2da4857456adfcaf9b2",
+  "wrapper_family": "chatml",
+  "default_wrapper": "chatml",
+  "allow_chat_template": false,
+  "fallback_wrapper": "chatml",
+  "wrapper_notes": "main-table expansion candidate; local tokenizer has no chat_template, so compare ChatML versus plain in provisional smoke before freezing a wrapper",
+  "tokenizer_load_policy": {
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "Qwen2Tokenizer",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior"
+  },
+  "tokenizer": {
+    "class_name": "Qwen2Tokenizer",
+    "is_fast": true,
+    "chat_template_exists": false,
+    "pad_token": "<|endoftext|>",
+    "pad_token_id": 151643,
+    "eos_token": "<|im_end|>",
+    "eos_token_id": 151645,
+    "bos_token": null,
+    "bos_token_id": null,
+    "unk_token": null,
+    "unk_token_id": null,
+    "special_tokens_map": {
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|endoftext|>"
+    }
+  },
+  "model_config": {
+    "model_type": "qwen2",
+    "pad_token_id": null,
+    "eos_token_id": 151643,
+    "bos_token_id": 151643,
+    "token_id_alignment_reasonable": false
+  },
+  "prompt_candidates": [
+    {
+      "requested_prompt_mode": "chatml",
+      "resolved_mode": "chatml",
+      "effective_mode": "chatml",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": true,
+      "rendered_prompt_head_500": "<|im_start|>system\nYou are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n<|im_end|>\n<|im_start|>user\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number ",
+      "rendered_prompt_tail_300": "was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\n<|im_end|>\n<|im_start|>assistant\n"
+    },
+    {
+      "requested_prompt_mode": "plain",
+      "resolved_mode": "plain",
+      "effective_mode": "plain",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": false,
+      "rendered_prompt_head_500": "System:\nYou are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n\nUser:\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p",
+      "rendered_prompt_tail_300": "per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\n"
+    }
+  ],
+  "skip_reason": "",
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<|endoftext|>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 151645,
+      "model_config_pad_token_id": null,
+      "model_config_eos_token_id": 151643
+    },
+    "after": {
+      "tokenizer_pad_token": "<|endoftext|>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 151645,
+      "model_config_pad_token_id": 151643,
+      "model_config_eos_token_id": 151645
+    },
+    "actions": [
+      "set model.config.pad_token_id = tokenizer.pad_token_id",
+      "set model.config.eos_token_id = tokenizer.eos_token_id"
+    ],
+    "changed": true
+  },
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "<|endoftext|>",
+    "tokenizer_pad_token_id": 151643,
+    "tokenizer_eos_token": "<|im_end|>",
+    "tokenizer_eos_token_id": 151645,
+    "model_config_pad_token_id": 151643,
+    "model_config_eos_token_id": 151645
+  }
+}

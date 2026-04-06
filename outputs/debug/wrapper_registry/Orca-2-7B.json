@@ -1,0 +1,59 @@
+{
+  "model_label": "Orca-2-7B",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17",
+  "sample_id": "IPG/2008/page_21.pdf-1",
+  "likely_instruction_tuned": true,
+  "wrapper_spec": {
+    "model_label": "Orca-2-7B",
+    "model_family": "chatml",
+    "default_wrapper": "chatml",
+    "allow_chat_template": false,
+    "fallback_wrapper": "chatml",
+    "notes": "instruction-tuned model; use ChatML serializer when tokenizer has no builtin template"
+  },
+  "prompt_render": {
+    "requested_mode": "registry",
+    "resolved_mode": "chatml",
+    "effective_mode": "chatml",
+    "wrapper_family": "chatml",
+    "registry_default_wrapper": "chatml",
+    "registry_allow_chat_template": false,
+    "registry_fallback_wrapper": "chatml",
+    "tokenizer_has_chat_template": false,
+    "used_chat_template": false,
+    "fallback_reason": "",
+    "has_assistant_generation_boundary": true,
+    "prompt_head_500": "<|im_start|>system\nYou are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n<|im_end|>\n<|im_start|>user\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number ",
+    "prompt_tail_300": "was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\n<|im_end|>\n<|im_start|>assistant\n"
+  },
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "[PAD]",
+    "tokenizer_pad_token_id": 32000,
+    "tokenizer_eos_token": "</s>",
+    "tokenizer_eos_token_id": 2,
+    "model_config_pad_token_id": 32000,
+    "model_config_eos_token_id": 2
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "[PAD]",
+      "tokenizer_pad_token_id": 32000,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": null,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "[PAD]",
+      "tokenizer_pad_token_id": 32000,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 32000,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [
+      "set model.config.pad_token_id = tokenizer.pad_token_id"
+    ],
+    "changed": true
+  }
+}

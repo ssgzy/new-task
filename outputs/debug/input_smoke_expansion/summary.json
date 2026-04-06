@@ -1,0 +1,21 @@
+{
+  "registry_path": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/outputs/metadata/provisional/model_registry.groups-main-candidate-expansion.json",
+  "sample_index": 0,
+  "max_new_tokens": 128,
+  "repetition_penalty": 1.1,
+  "rows": [
+    {
+      "model_label": "Xwin-LM-7B",
+      "status": "ok",
+      "skip_reason": "",
+      "recommended_wrapper": "registry",
+      "effective_wrapper": "vicuna",
+      "tokenizer_effective_class": "TokenizersBackend",
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": false,
+      "parse_error_reason": "missing_answer_line"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+
+### Answer
+Answer: 112.24%
+
+Explanation:
+To calculate the percentage increase, we use the formula:
+(Amount 1 - Amount 2) / Amount 2 * 100%
+In this case, the amounts are the total number of shares purchased in October and November:
+(297,04 - 44,68) / 44,68 * 100% = 112.24%

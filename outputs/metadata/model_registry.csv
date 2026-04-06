@@ -1,0 +1,7 @@
+label,group,repo_id,status,snapshot_path,resolved_revision,num_siblings,error
+Lion-7B,main,YuxinJiang/lion-7b,available_local,/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966,a55f94073db93bca1c01ca9154c47198508dc966,12,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,14,
+Zephyr-7B-beta,main,HuggingFaceH4/zephyr-7b-beta,available_local,/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c,892b3d7a7b1cf10c7a701c60881cd93df615734c,31,
+MiniLLM-Llama-7B,main,MiniLLM/MiniLLM-Llama-7B,available_local,/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce,21c53d1c1f8672d70595b9886ccf35d9a3ea35ce,12,
+DeepSeek-R1-Distill-Qwen-7B,appendix,deepseek-ai/DeepSeek-R1-Distill-Qwen-7B,available_local,/Users/sam/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60,916b56a44061fd5cd7d6a8fb632557ed4f724f60,11,
+OpenR1-Distill-7B,appendix,open-r1/OpenR1-Distill-7B,available_local,/Users/sam/.cache/huggingface/hub/models--open-r1--OpenR1-Distill-7B/snapshots/6104419ee43664a1a653c2da4857456adfcaf9b2,6104419ee43664a1a653c2da4857456adfcaf9b2,23,

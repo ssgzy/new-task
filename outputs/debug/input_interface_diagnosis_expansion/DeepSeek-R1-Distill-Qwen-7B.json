@@ -1,0 +1,88 @@
+{
+  "model_label": "DeepSeek-R1-Distill-Qwen-7B",
+  "group": "main_candidate_expansion",
+  "model_family": "reasoning_distill",
+  "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "registry_status": "available_local",
+  "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "wrapper_family": "chatml",
+  "default_wrapper": "chat_template",
+  "allow_chat_template": true,
+  "fallback_wrapper": "chatml",
+  "wrapper_notes": "main-table expansion candidate; local tokenizer exposes chat_template, fallback to ChatML if a future snapshot removes it",
+  "tokenizer_load_policy": {
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior"
+  },
+  "tokenizer": {
+    "class_name": "TokenizersBackend",
+    "is_fast": true,
+    "chat_template_exists": true,
+    "pad_token": "<｜end▁of▁sentence｜>",
+    "pad_token_id": 151643,
+    "eos_token": "<｜end▁of▁sentence｜>",
+    "eos_token_id": 151643,
+    "bos_token": "<｜begin▁of▁sentence｜>",
+    "bos_token_id": 151646,
+    "unk_token": null,
+    "unk_token_id": null,
+    "special_tokens_map": {
+      "bos_token": "<｜begin▁of▁sentence｜>",
+      "eos_token": "<｜end▁of▁sentence｜>",
+      "pad_token": "<｜end▁of▁sentence｜>"
+    }
+  },
+  "model_config": {
+    "model_type": "qwen2",
+    "pad_token_id": null,
+    "eos_token_id": 151643,
+    "bos_token_id": 151643,
+    "token_id_alignment_reasonable": true
+  },
+  "prompt_candidates": [
+    {
+      "requested_prompt_mode": "registry",
+      "resolved_mode": "chat_template",
+      "effective_mode": "chat_template",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": true,
+      "rendered_prompt_head_500": "<｜begin▁of▁sentence｜>You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value><｜User｜>### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased",
+      "rendered_prompt_tail_300": "hheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?<｜Assistant｜><think>\n"
+    }
+  ],
+  "skip_reason": "",
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<｜end▁of▁sentence｜>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<｜end▁of▁sentence｜>",
+      "tokenizer_eos_token_id": 151643,
+      "model_config_pad_token_id": null,
+      "model_config_eos_token_id": 151643
+    },
+    "after": {
+      "tokenizer_pad_token": "<｜end▁of▁sentence｜>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<｜end▁of▁sentence｜>",
+      "tokenizer_eos_token_id": 151643,
+      "model_config_pad_token_id": 151643,
+      "model_config_eos_token_id": 151643
+    },
+    "actions": [
+      "set model.config.pad_token_id = tokenizer.pad_token_id"
+    ],
+    "changed": true
+  },
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "<｜end▁of▁sentence｜>",
+    "tokenizer_pad_token_id": 151643,
+    "tokenizer_eos_token": "<｜end▁of▁sentence｜>",
+    "tokenizer_eos_token_id": 151643,
+    "model_config_pad_token_id": 151643,
+    "model_config_eos_token_id": 151643
+  }
+}

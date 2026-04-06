@@ -1,0 +1,57 @@
+{
+  "model_label": "Zephyr-7B-beta",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
+  "sample_id": "IPG/2008/page_21.pdf-1",
+  "likely_instruction_tuned": true,
+  "wrapper_spec": {
+    "model_label": "Zephyr-7B-beta",
+    "model_family": "plain",
+    "default_wrapper": "plain",
+    "allow_chat_template": true,
+    "fallback_wrapper": "plain",
+    "notes": "mainline plain serializer, with chat_template retained as a debug comparison path"
+  },
+  "prompt_render": {
+    "requested_mode": "registry",
+    "resolved_mode": "plain",
+    "effective_mode": "plain",
+    "wrapper_family": "plain",
+    "registry_default_wrapper": "plain",
+    "registry_allow_chat_template": true,
+    "registry_fallback_wrapper": "plain",
+    "tokenizer_has_chat_template": true,
+    "used_chat_template": false,
+    "fallback_reason": "",
+    "has_assistant_generation_boundary": false,
+    "prompt_head_500": "System:\nYou are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n\nUser:\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p",
+    "prompt_tail_300": "per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\n"
+  },
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "</s>",
+    "tokenizer_pad_token_id": 2,
+    "tokenizer_eos_token": "</s>",
+    "tokenizer_eos_token_id": 2,
+    "model_config_pad_token_id": 2,
+    "model_config_eos_token_id": 2
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "</s>",
+      "tokenizer_pad_token_id": 2,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 2,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "</s>",
+      "tokenizer_pad_token_id": 2,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 2,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [],
+    "changed": false
+  }
+}

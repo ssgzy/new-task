@@ -1,0 +1,146 @@
+{
+  "split": "train",
+  "official_split_name": "train",
+  "num_examples": 6251,
+  "raw_answer_parse_success": 6251,
+  "raw_answer_parse_rate": 1.0,
+  "exe_ans_parse_success": 6251,
+  "exe_ans_parse_rate": 1.0,
+  "raw_exe_numeric_mismatch_count": 4440,
+  "min_context_char_len": 504,
+  "max_context_char_len": 16117,
+  "mean_context_char_len": 4073.69,
+  "top_level_keys": {
+    "filename": 6251,
+    "id": 6251,
+    "post_text": 6251,
+    "pre_text": 6251,
+    "qa": 6251,
+    "table": 6251,
+    "table_ori": 6251,
+    "table_retrieved": 6251,
+    "table_retrieved_all": 6251,
+    "text_retrieved": 6251,
+    "text_retrieved_all": 6251
+  },
+  "qa_keys": {
+    "ann_table_rows": 6251,
+    "ann_text_rows": 6251,
+    "answer": 6251,
+    "exe_ans": 6251,
+    "explanation": 6251,
+    "gold_inds": 6251,
+    "model_input": 6251,
+    "program": 6251,
+    "program_re": 6251,
+    "question": 6251,
+    "steps": 6251,
+    "tfidftopn": 6251
+  },
+  "answer_source_counter": {
+    "qa.answer": 6203,
+    "qa.exe_ans": 48
+  },
+  "answer_unit_counter": {
+    "percent": 3508,
+    "plain": 2743
+  },
+  "boolean_answer_counter": {
+    "no": 47,
+    "yes": 77
+  },
+  "gold_numeric_non_null": 6251,
+  "gold_numeric_null": 0,
+  "mismatch_examples": [
+    {
+      "id": "ADI/2009/page_49.pdf-1",
+      "question": "what is the the interest expense in 2009?",
+      "raw_answer": "380",
+      "raw_numeric": 380.0,
+      "exe_ans": 3.8,
+      "exe_numeric": 3.8,
+      "program": "divide(100, 100), divide(3.8, #0)"
+    },
+    {
+      "id": "AAL/2018/page_13.pdf-2",
+      "question": "what was the total operating expenses in 2018 in millions",
+      "raw_answer": "41932",
+      "raw_numeric": 41932.0,
+      "exe_ans": 41932.20339,
+      "exe_numeric": 41932.20339,
+      "program": "divide(9896, 23.6%)"
+    },
+    {
+      "id": "INTC/2013/page_71.pdf-4",
+      "question": "what percentage of total cash and investments as of dec . 29 2012 was comprised of available-for-sale investments?",
+      "raw_answer": "53%",
+      "raw_numeric": 53.0,
+      "exe_ans": 0.53232,
+      "exe_numeric": 0.53232,
+      "program": "divide(14001, 26302)"
+    },
+    {
+      "id": "ETR/2008/page_313.pdf-3",
+      "question": "what is the growth rate in net revenue in 2008?",
+      "raw_answer": "-3.2%",
+      "raw_numeric": -3.2,
+      "exe_ans": -0.03219,
+      "exe_numeric": -0.03219,
+      "program": "subtract(959.2, 991.1), divide(#0, 991.1)"
+    },
+    {
+      "id": "C/2010/page_272.pdf-1",
+      "question": "what was the growth rate of the loans held-for-sale that are carried at locom from 2009 to 2010",
+      "raw_answer": "56.25%",
+      "raw_numeric": 56.25,
+      "exe_ans": 0.97656,
+      "exe_numeric": 0.97656,
+      "program": "divide(2.5, 1.6), divide(#0, 1.6)"
+    },
+    {
+      "id": "AMT/2012/page_121.pdf-1",
+      "question": "for acquired customer-related and network location intangibles , what is the expected annual amortization expenses , in millions?",
+      "raw_answer": "7.4",
+      "raw_numeric": 7.4,
+      "exe_ans": 7.385,
+      "exe_numeric": 7.385,
+      "program": "add(75.0, 72.7), divide(#0, 20)"
+    },
+    {
+      "id": "GIS/2019/page_45.pdf-1",
+      "question": "in 2019 what was the percent of the net earnings to the net cash provided by operating activities",
+      "raw_answer": "63.6%",
+      "raw_numeric": 63.6,
+      "exe_ans": 0.63634,
+      "exe_numeric": 0.63634,
+      "program": "divide(1786.2, 2807.0)"
+    },
+    {
+      "id": "IPG/2009/page_89.pdf-3",
+      "question": "what percentage decrease occurred from 2011-2012 for deferred acquisition payments?",
+      "raw_answer": "96.55%",
+      "raw_numeric": 96.55,
+      "exe_ans": 96.55172,
+      "exe_numeric": 96.55172,
+      "program": "subtract(34.8, 1.2), divide(#0, 34.8), multiply(#1, const_100)"
+    },
+    {
+      "id": "CDNS/2018/page_32.pdf-2",
+      "question": "how is net change in cash from financing activity affected by the share repurchase during december 20018 , ( in millions ) ?",
+      "raw_answer": "56.6",
+      "raw_numeric": 56.6,
+      "exe_ans": 56.57146,
+      "exe_numeric": 56.57146,
+      "program": "multiply(1327657, 42.61), divide(#0, const_1000000)"
+    },
+    {
+      "id": "AAL/2015/page_74.pdf-1",
+      "question": "what is the percent of the labor-related deemed claim as part of the total reorganization items net in 2013",
+      "raw_answer": "65.3%",
+      "raw_numeric": 65.3,
+      "exe_ans": 0.65273,
+      "exe_numeric": 0.65273,
+      "program": "divide(1733, 2655)"
+    }
+  ]
+}

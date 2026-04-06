@@ -1,0 +1,146 @@
+{
+  "split": "test",
+  "official_split_name": "test",
+  "num_examples": 1147,
+  "raw_answer_parse_success": 1147,
+  "raw_answer_parse_rate": 1.0,
+  "exe_ans_parse_success": 1147,
+  "exe_ans_parse_rate": 1.0,
+  "raw_exe_numeric_mismatch_count": 809,
+  "min_context_char_len": 314,
+  "max_context_char_len": 9010,
+  "mean_context_char_len": 3971.34,
+  "top_level_keys": {
+    "filename": 1147,
+    "id": 1147,
+    "post_text": 1147,
+    "pre_text": 1147,
+    "qa": 1147,
+    "table": 1147,
+    "table_ori": 1147,
+    "table_retrieved": 1147,
+    "table_retrieved_all": 1147,
+    "text_retrieved": 1147,
+    "text_retrieved_all": 1147
+  },
+  "qa_keys": {
+    "ann_table_rows": 1147,
+    "ann_text_rows": 1147,
+    "answer": 1147,
+    "exe_ans": 1147,
+    "explanation": 1147,
+    "gold_inds": 1147,
+    "model_input": 1147,
+    "program": 1147,
+    "program_re": 1147,
+    "question": 1147,
+    "steps": 1147,
+    "tfidftopn": 1147
+  },
+  "answer_source_counter": {
+    "qa.answer": 1133,
+    "qa.exe_ans": 14
+  },
+  "answer_unit_counter": {
+    "percent": 652,
+    "plain": 495
+  },
+  "boolean_answer_counter": {
+    "no": 8,
+    "yes": 14
+  },
+  "gold_numeric_non_null": 1147,
+  "gold_numeric_null": 0,
+  "mismatch_examples": [
+    {
+      "id": "INTC/2015/page_41.pdf-4",
+      "question": "what percentage of total facilities as measured in square feet are leased?",
+      "raw_answer": "14%",
+      "raw_numeric": 14.0,
+      "exe_ans": 0.14464,
+      "exe_numeric": 0.14464,
+      "program": "divide(8.1, 56.0)"
+    },
+    {
+      "id": "ADI/2011/page_61.pdf-2",
+      "question": "what is the percentage change in cash flow hedges in 2011 compare to the 2010?",
+      "raw_answer": "9.9%",
+      "raw_numeric": 9.9,
+      "exe_ans": 0.09864,
+      "exe_numeric": 0.09864,
+      "program": "subtract(153.7, 139.9), divide(#0, 139.9)"
+    },
+    {
+      "id": "FIS/2010/page_70.pdf-2",
+      "question": "what portion of total purchase price is related to stock awards?",
+      "raw_answer": "2.9%",
+      "raw_numeric": 2.9,
+      "exe_ans": 0.02899,
+      "exe_numeric": 0.02899,
+      "program": "divide(121.4, 4187.8)"
+    },
+    {
+      "id": "SYY/2006/page_71.pdf-1",
+      "question": "what was the percentage change in total rental expense under operating leases from july 2 , 2005 to july 1 , 2006?",
+      "raw_answer": "7%",
+      "raw_numeric": 7.0,
+      "exe_ans": 0.06757,
+      "exe_numeric": 0.06757,
+      "program": "subtract(92710000, 86842000), divide(#0, 86842000)"
+    },
+    {
+      "id": "AES/2010/page_227.pdf-3",
+      "question": "what percent of total recourse debt is current?",
+      "raw_answer": "10%",
+      "raw_numeric": 10.0,
+      "exe_ans": 0.10039,
+      "exe_numeric": 0.10039,
+      "program": "divide(463, 4612)"
+    },
+    {
+      "id": "GS/2015/page_188.pdf-2",
+      "question": "what percentage of future minimum rental payments are due in 2018?",
+      "raw_answer": "12%",
+      "raw_numeric": 12.0,
+      "exe_ans": 0.11689,
+      "exe_numeric": 0.11689,
+      "program": "divide(301, 2575)"
+    },
+    {
+      "id": "STT/2007/page_111.pdf-3",
+      "question": "what is the growth rate in the balance of standby letters of credit from 2006 to 2007?",
+      "raw_answer": "-4.4%",
+      "raw_numeric": -4.4,
+      "exe_ans": -0.04365,
+      "exe_numeric": -0.04365,
+      "program": "subtract(4711, 4926), divide(#0, 4926)"
+    },
+    {
+      "id": "UAA/2016/page_42.pdf-2",
+      "question": "what is the debt-to-asset ratio?",
+      "raw_answer": "22.4%",
+      "raw_numeric": 22.4,
+      "exe_ans": 0.22429,
+      "exe_numeric": 0.22429,
+      "program": "divide(817388, 3644331)"
+    },
+    {
+      "id": "GIS/2018/page_110.pdf-2",
+      "question": "what portion of the total noncancelable future lease commitments are due in fiscal year of 2019?",
+      "raw_answer": "24.6%",
+      "raw_numeric": 24.6,
+      "exe_ans": 0.24566,
+      "exe_numeric": 0.24566,
+      "program": "divide(137.4, 559.3)"
+    },
+    {
+      "id": "AWK/2014/page_121.pdf-2",
+      "question": "what was the percentage change in deferred tax assets and regulatory assets from 2013 to 2014",
+      "raw_answer": "1.7%",
+      "raw_numeric": 1.7,
+      "exe_ans": 0.01714,
+      "exe_numeric": 0.01714,
+      "program": "subtract(6348, 6241), divide(#0, 6241)"
+    }
+  ]
+}

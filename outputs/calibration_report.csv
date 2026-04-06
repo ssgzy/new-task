@@ -1,0 +1,13 @@
+model_label,group,repo_id,registry_status,snapshot_path,max_new_tokens,run_status,answer_present_rate,valid_parse_rate,truncation_without_answer_rate,mean_new_tokens,p95_new_tokens,error
+Lion-7B,main,YuxinJiang/lion-7b,available_local,/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966,128,ok,0.0,0.0,1.0,128.0,128,
+Lion-7B,main,YuxinJiang/lion-7b,available_local,/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966,192,ok,0.0,0.0,1.0,192.0,192,
+Lion-7B,main,YuxinJiang/lion-7b,available_local,/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966,256,ok,0.0,0.0,1.0,256.0,256,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,128,ok,0.0,0.0,0.8,104.42,128,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,192,ok,0.0,0.0,0.78,154.42,192,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,256,ok,0.0,0.0,0.78,204.34,256,
+Zephyr-7B-beta,main,HuggingFaceH4/zephyr-7b-beta,available_local,/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c,128,ok,0.5,0.24,0.32,94.66,128,
+Zephyr-7B-beta,main,HuggingFaceH4/zephyr-7b-beta,available_local,/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c,192,ok,0.5,0.24,0.3,123.42,192,
+Zephyr-7B-beta,main,HuggingFaceH4/zephyr-7b-beta,available_local,/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c,256,ok,0.54,0.24,0.2,145.42,256,
+MiniLLM-Llama-7B,main,MiniLLM/MiniLLM-Llama-7B,available_local,/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce,128,ok,0.6,0.2,0.14,50.82,128,
+MiniLLM-Llama-7B,main,MiniLLM/MiniLLM-Llama-7B,available_local,/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce,192,ok,0.6,0.2,0.12,61.56,192,
+MiniLLM-Llama-7B,main,MiniLLM/MiniLLM-Llama-7B,available_local,/Users/sam/.cache/huggingface/hub/models--MiniLLM--MiniLLM-Llama-7B/snapshots/21c53d1c1f8672d70595b9886ccf35d9a3ea35ce,256,ok,0.6,0.2,0.12,71.8,256,

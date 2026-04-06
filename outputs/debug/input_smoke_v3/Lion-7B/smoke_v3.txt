@@ -1,0 +1,46 @@
+# Smoke v3：Lion-7B
+
+- effective wrapper：`alpaca`
+- tokenizer requested class：`AutoTokenizer`
+- tokenizer effective class：`TokenizersBackend`
+- tokenizer requested use_fast：`None`
+- tokenizer effective is_fast：`True`
+- tokenizer load notes：default AutoTokenizer.from_pretrained behavior
+- Answer: 是否出现：`False`
+- valid_parse：`False`
+- truncation_suspect：`True`
+- repetition_collapse：`True`
+- parse_error_reason：`missing_answer_line`
+- answer_line_raw：``
+
+## rendered prompt head
+```text
+### Instruction:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+### Input:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchase
+```
+
+## rendered prompt tail
+```text
+e withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+### Response:
+
+```
+
+## raw generation
+```text
+xcfoo accom somebody theoret!!! incor behaviour http « behaviour Organisationmt Basically optssimp Nu Davis possibrelative Uncle α info behaviour http TRUEconstraint gentlemanboot behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http «
+```

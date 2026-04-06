@@ -1,0 +1,56 @@
+{
+  "model_label": "Zephyr-7B-beta",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
+  "sample_id": "IPG/2008/page_21.pdf-1",
+  "likely_instruction_tuned": true,
+  "tokenizer": {
+    "chat_template_exists": true,
+    "bos_token": "<s>",
+    "eos_token": "</s>",
+    "pad_token": "</s>",
+    "unk_token": "<unk>",
+    "bos_token_id": 1,
+    "eos_token_id": 2,
+    "pad_token_id": 2,
+    "unk_token_id": 0,
+    "special_tokens_map": {
+      "bos_token": "<s>",
+      "eos_token": "</s>",
+      "unk_token": "<unk>",
+      "pad_token": "</s>"
+    }
+  },
+  "tokenizer_runtime_patch": {
+    "pad_token_filled_from_eos": false,
+    "original_pad_token": "</s>",
+    "original_pad_token_id": 2,
+    "effective_pad_token": "</s>",
+    "effective_pad_token_id": 2
+  },
+  "model_config": {
+    "model_type": "mistral",
+    "architectures": [
+      "MistralForCausalLM"
+    ],
+    "model_config_eos_token_id": 2,
+    "model_config_pad_token_id": 2,
+    "model_config_bos_token_id": 1,
+    "model_config_unk_token_id": null,
+    "token_id_alignment_checks": {
+      "eos_token_id_match_tokenizer": true,
+      "pad_token_id_reasonable": true,
+      "bos_token_id_match_tokenizer": true,
+      "unk_token_id_reasonable": true
+    },
+    "token_id_alignment_reasonable": true
+  },
+  "prompt_render": {
+    "requested_mode": "auto",
+    "effective_mode": "chat_template",
+    "used_chat_template": true,
+    "fallback_reason": "",
+    "has_assistant_generation_boundary": true,
+    "prompt_head_500": "<|system|>\nYou are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value></s>\n<|user|>\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as ",
+    "prompt_tail_300": "ithheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?</s>\n<|assistant|>\n"
+  }
+}

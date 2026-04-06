@@ -1,0 +1,4 @@
+model_label,group,repo_id,registry_status,snapshot_path,max_new_tokens,run_status,answer_present_rate,valid_parse_rate,truncation_without_answer_rate,mean_new_tokens,p95_new_tokens,error
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,128,ok,0.8,0.72,0.18,33.72,128,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,192,ok,0.86,0.78,0.1,42.84,192,
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,256,ok,0.86,0.78,0.1,49.24,256,

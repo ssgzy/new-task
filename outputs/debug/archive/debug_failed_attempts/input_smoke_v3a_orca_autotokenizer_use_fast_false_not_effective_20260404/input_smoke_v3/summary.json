@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "model_label": "Lion-7B",
+      "effective_wrapper": "alpaca",
+      "tokenizer_requested_use_fast": null,
+      "tokenizer_effective_is_fast": true,
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": true,
+      "parse_error_reason": "missing_answer_line"
+    },
+    {
+      "model_label": "Orca-2-7B",
+      "effective_wrapper": "chatml",
+      "tokenizer_requested_use_fast": false,
+      "tokenizer_effective_is_fast": true,
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": false,
+      "parse_error_reason": "missing_answer_line"
+    }
+  ]
+}

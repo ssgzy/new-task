@@ -1,0 +1,29 @@
+# Wrapper Registry v2
+
+## Lion-7B
+- model_family: `vicuna`
+- default_wrapper: `vicuna`
+- allow_chat_template: `False`
+- fallback_wrapper: `vicuna`
+- notes: instruction-tuned anchor baseline; use Vicuna-style USER/ASSISTANT serializer
+
+## Orca-2-7B
+- model_family: `chatml`
+- default_wrapper: `chatml`
+- allow_chat_template: `False`
+- fallback_wrapper: `chatml`
+- notes: instruction-tuned model; use ChatML serializer when tokenizer has no builtin template
+
+## Zephyr-7B-beta
+- model_family: `plain`
+- default_wrapper: `plain`
+- allow_chat_template: `True`
+- fallback_wrapper: `plain`
+- notes: mainline plain serializer, with chat_template retained as a debug comparison path
+
+## MiniLLM-Llama-7B
+- model_family: `base_distilled`
+- default_wrapper: `completion`
+- allow_chat_template: `False`
+- fallback_wrapper: `completion`
+- notes: base distilled baseline; expose completion-style serializer

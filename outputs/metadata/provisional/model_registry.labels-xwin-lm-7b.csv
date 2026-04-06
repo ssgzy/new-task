@@ -1,0 +1,2 @@
+label,group,model_family,repo_id,status,snapshot_path,resolved_revision,num_siblings,error,notes
+Xwin-LM-7B,main_candidate_expansion,alignment,Xwin-LM/Xwin-LM-7B-V0.1,available_or_downloaded,/Users/sam/.cache/huggingface/hub/models--Xwin-LM--Xwin-LM-7B-V0.1/snapshots/470e680120a7249d6e8a875345015ddba1711100,470e680120a7249d6e8a875345015ddba1711100,11,,new expansion candidate; official model card uses Vicuna-style prompts

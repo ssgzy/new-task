@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Xwin-LM-7B",
+    "group": "main_candidate_expansion",
+    "model_family": "alignment",
+    "notes": "new expansion candidate; official model card uses Vicuna-style prompts",
+    "repo_id": "Xwin-LM/Xwin-LM-7B-V0.1",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--Xwin-LM--Xwin-LM-7B-V0.1/snapshots/470e680120a7249d6e8a875345015ddba1711100",
+    "resolved_revision": "470e680120a7249d6e8a875345015ddba1711100",
+    "num_siblings": 9,
+    "error": ""
+  },
+  {
+    "label": "LaMini-LLaMA-7B",
+    "group": "main_candidate_expansion",
+    "model_family": "instruction_distill",
+    "notes": "repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round",
+    "repo_id": "MBZUAI/LaMini-LLaMA-7B",
+    "status": "pending_repo_id",
+    "snapshot_path": "",
+    "resolved_revision": "",
+    "num_siblings": "",
+    "error": "repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round"
+  },
+  {
+    "label": "DeepSeek-R1-Distill-Qwen-7B",
+    "group": "main_candidate_expansion",
+    "model_family": "reasoning_distill",
+    "notes": "new expansion candidate; reasoning-distilled Qwen2 model, first pass stays under direct-answer parser v1 without CoT-specific parser changes",
+    "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+    "resolved_revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+    "num_siblings": 7,
+    "error": ""
+  },
+  {
+    "label": "OpenR1-Distill-7B",
+    "group": "main_candidate_expansion",
+    "model_family": "long_reasoning_distill",
+    "notes": "new expansion candidate; reasoning-oriented Qwen2 model, first pass compares ChatML/plain wrappers without changing parser v1",
+    "repo_id": "open-r1/OpenR1-Distill-7B",
+    "status": "available_local",
+    "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--open-r1--OpenR1-Distill-7B/snapshots/6104419ee43664a1a653c2da4857456adfcaf9b2",
+    "resolved_revision": "6104419ee43664a1a653c2da4857456adfcaf9b2",
+    "num_siblings": 16,
+    "error": ""
+  }
+]

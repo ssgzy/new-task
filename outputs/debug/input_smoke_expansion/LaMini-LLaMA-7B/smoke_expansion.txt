@@ -1,0 +1,10 @@
+# 扩展模型 smoke：LaMini-LLaMA-7B
+
+- registry status：`pending_repo_id`
+- model_family：`instruction_distill`
+- wrapper family：`alpaca`
+- tokenizer class：`None`
+- tokenizer is_fast：`None`
+- tokenizer.chat_template：`None`
+
+- skip reason：repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round

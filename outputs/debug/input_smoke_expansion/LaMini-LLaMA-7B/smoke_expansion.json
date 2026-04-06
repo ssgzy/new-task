@@ -1,0 +1,8 @@
+{
+  "model_label": "LaMini-LLaMA-7B",
+  "registry_status": "pending_repo_id",
+  "status": "skipped",
+  "skip_reason": "repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round",
+  "recommended_candidate": null,
+  "candidate_rows": []
+}

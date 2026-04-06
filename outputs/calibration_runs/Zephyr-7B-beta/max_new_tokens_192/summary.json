@@ -1,0 +1,23 @@
+{
+  "model_label": "Zephyr-7B-beta",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_calib50.jsonl",
+  "num_examples": 50,
+  "runtime_success": 1.0,
+  "format_ok": 0.5,
+  "valid_parse": 0.24,
+  "em": 0.04,
+  "tm": 0.04,
+  "truncation_without_answer_rate": 0.3,
+  "answer_present_rate": 0.5,
+  "valid_parse_rate": 0.24,
+  "avg_latency_ms": 14626.65,
+  "mean_output_tokens": 123.42,
+  "mean_new_tokens": 123.42,
+  "p95_new_tokens": 192,
+  "tok_per_sec": 8.438,
+  "peak_vram": 14484122880,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 192
+}

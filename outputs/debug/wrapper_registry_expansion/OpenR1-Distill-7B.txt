@@ -1,0 +1,9 @@
+# Wrapper Registry Expansion：OpenR1-Distill-7B
+
+- group：`main_candidate_expansion`
+- model_family：`long_reasoning_distill`
+- wrapper family：`chatml`
+- default wrapper：`chatml`
+- allow chat_template：`False`
+- fallback wrapper：`chatml`
+- notes：main-table expansion candidate; local tokenizer has no chat_template, so compare ChatML versus plain in provisional smoke before freezing a wrapper

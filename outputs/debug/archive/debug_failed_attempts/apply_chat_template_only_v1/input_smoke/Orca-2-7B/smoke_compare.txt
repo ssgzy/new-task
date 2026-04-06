@@ -1,0 +1,84 @@
+# 输入有效性 Smoke：Orca-2-7B
+
+## plain / repetition_penalty=1.0
+- 实际渲染模式：`plain`
+- 是否使用 chat_template：`False`
+- fallback 策略：`none`
+- tokenized input length：`1038`
+- Answer: 是否出现：`False`
+- truncation_suspect：`True`
+- repetition_collapse：`True`
+- new_tokens：`128`
+- latency_ms：`28595.27`
+
+### raw prompt 前 500 字符
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+### raw prompt 后 300 字符
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```
+
+### raw generation text 前 1200 字符
+```text
+5 . 9 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1 4 ▁m , ▁s 2 0 1
+```
+
+## auto / repetition_penalty=1.1
+- 实际渲染模式：`plain`
+- 是否使用 chat_template：`False`
+- fallback 策略：`tokenizer.chat_template_missing_use_plain_prompt`
+- tokenized input length：`1038`
+- Answer: 是否出现：`False`
+- truncation_suspect：`True`
+- repetition_collapse：`True`
+- new_tokens：`128`
+- latency_ms：`12119.44`
+
+### raw prompt 前 500 字符
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+### raw prompt 后 300 字符
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```
+
+### raw generation text 前 1200 字符
+```text
+5 . 9 ▁m ▁s 2 0 1 4 ▁ms ▁m 2 0 1 4 ▁ms 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0 1 4 ▁m 2 0
+```
+

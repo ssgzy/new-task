@@ -1,0 +1,64 @@
+{
+  "model_label": "Lion-7B",
+  "sample_id": "IPG/2008/page_21.pdf-1",
+  "prompt_render_mode_requested": "registry",
+  "prompt_render_mode_resolved": "vicuna",
+  "prompt_render_mode_effective": "vicuna",
+  "wrapper_family": "vicuna",
+  "prompt_fallback_reason": "",
+  "used_chat_template": false,
+  "has_assistant_generation_boundary": true,
+  "raw_prompt": "You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n\nUSER: ### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of publicly announced plans or programs maximum number of shares that may yet be purchased under the plans or programs .\n\n### Table\n| total number of shares purchased | average price paid per share2 | total number of shares purchased as part of publicly announced plans or programs | maximum number ofshares that may yet be purchased under the plans or programs\noctober 1-31 | 29704 | $ 5.99 | 2014 | 2014\nnovember 1-30 | 4468 | $ 3.24 | 2014 | 2014\ndecember 1-31 | 12850 | $ 3.98 | 2014 | 2014\ntotal1 | 47022 | $ 5.18 | 2014 | 2014\n\n### Post Text\ntotal1 .\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n47022 $ 5.18 2014 2014 1 consists of restricted shares of our common stock withheld under the terms of grants under employee stock compensation plans to offset tax withholding obligations that occurred upon vesting and release of restricted shares during each month of the fourth quarter of 2008 ( the 201cwithheld shares 201d ) .\n2 the average price per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\nASSISTANT:",
+  "raw_prompt_head_500": "You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n\nUSER: ### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of publicly ",
+  "raw_prompt_tail_300": "of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\nASSISTANT:",
+  "tokenized_input_length": 557,
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "[PAD]",
+    "tokenizer_pad_token_id": 32000,
+    "tokenizer_eos_token": "</s>",
+    "tokenizer_eos_token_id": 2,
+    "model_config_pad_token_id": 32000,
+    "model_config_eos_token_id": 2
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "[PAD]",
+      "tokenizer_pad_token_id": 32000,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "[PAD]",
+      "tokenizer_pad_token_id": 32000,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 32000,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [
+      "set model.config.pad_token_id = tokenizer.pad_token_id"
+    ],
+    "changed": true
+  },
+  "raw_generation_text": "Basically optssimp Nu Davis possibrelative Uncle α info behaviour http « behaviour Organisationmt Basically doesnt[@Pointstit artific;\"­Themexs\"/ behaviour http TRUEconstraintCancel datºmessages fick!!:-Errors locale behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour http « behaviour",
+  "answer_appears": false,
+  "valid_parse": false,
+  "truncation_suspect": true,
+  "repetition_collapse": true,
+  "parse": {
+    "format_ok": false,
+    "valid_parse": false,
+    "pred_value": null,
+    "pred_unit_type": null,
+    "answer_line_raw": "",
+    "multiple_answer_lines": false,
+    "truncated_suspect": true,
+    "parse_error_reason": "missing_answer_line"
+  },
+  "max_new_tokens": 128,
+  "repetition_penalty": 1.1,
+  "new_tokens": 128,
+  "latency_ms": 16766.04
+}

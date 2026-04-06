@@ -1,0 +1,87 @@
+{
+  "model_label": "Xwin-LM-7B",
+  "group": "main_candidate_expansion",
+  "model_family": "alignment",
+  "repo_id": "Xwin-LM/Xwin-LM-7B-V0.1",
+  "registry_status": "available_local",
+  "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--Xwin-LM--Xwin-LM-7B-V0.1/snapshots/470e680120a7249d6e8a875345015ddba1711100",
+  "wrapper_family": "vicuna",
+  "default_wrapper": "vicuna",
+  "allow_chat_template": false,
+  "fallback_wrapper": "vicuna",
+  "wrapper_notes": "main-table expansion candidate; use the Vicuna-style USER/ASSISTANT serializer from the official Xwin-LM model card",
+  "tokenizer_load_policy": {
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior"
+  },
+  "tokenizer": {
+    "class_name": "TokenizersBackend",
+    "is_fast": true,
+    "chat_template_exists": false,
+    "pad_token": "<unk>",
+    "pad_token_id": 0,
+    "eos_token": "</s>",
+    "eos_token_id": 2,
+    "bos_token": "<s>",
+    "bos_token_id": 1,
+    "unk_token": "<unk>",
+    "unk_token_id": 0,
+    "special_tokens_map": {
+      "bos_token": "<s>",
+      "eos_token": "</s>",
+      "unk_token": "<unk>",
+      "pad_token": "<unk>"
+    }
+  },
+  "model_config": {
+    "model_type": "llama",
+    "pad_token_id": 0,
+    "eos_token_id": 2,
+    "bos_token_id": 1,
+    "token_id_alignment_reasonable": true
+  },
+  "prompt_candidates": [
+    {
+      "requested_prompt_mode": "registry",
+      "resolved_mode": "vicuna",
+      "effective_mode": "vicuna",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": true,
+      "rendered_prompt_head_500": "You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value>\n\nUSER: ### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of publicly ",
+      "rendered_prompt_tail_300": "of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?\nASSISTANT:"
+    }
+  ],
+  "skip_reason": "",
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [],
+    "changed": false
+  },
+  "tokenizer_snapshot_after_alignment": {
+    "tokenizer_pad_token": "<unk>",
+    "tokenizer_pad_token_id": 0,
+    "tokenizer_eos_token": "</s>",
+    "tokenizer_eos_token_id": 2,
+    "model_config_pad_token_id": 0,
+    "model_config_eos_token_id": 2
+  }
+}

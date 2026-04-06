@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "dc776a8ae9d2c88b",
+    "type": "split",
+    "children": [
+      {
+        "id": "00bd75e7bf1a6c8c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2693170e1effca97",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/模型注册表.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "模型注册表"
+            }
+          },
+          {
+            "id": "168eecc6d28afac0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/过程总结_输入包装修复.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "过程总结_输入包装修复"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1196e2f391db1fbd",
+    "type": "split",
+    "children": [
+      {
+        "id": "d9806f3bc78054fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "557ed0b5aceffecd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "38d3b2f2a8155817",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "afd8aff92fd9e5f0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d9aa4e96627d3a49",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9a41ce2ec2012c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b70d397254159d9d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/模型注册表.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "模型注册表 的反向链接列表"
+            }
+          },
+          {
+            "id": "2499054f8ff24339",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/异常与决策记录.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "异常与决策记录 的出链列表"
+            }
+          },
+          {
+            "id": "3318e0567524169c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "1d523bf24d87608a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "eacba2dbed26ad7d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/模型注册表.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "模型注册表 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "2693170e1effca97",
+  "lastOpenFiles": [
+    "docs/当前状态.md",
+    "docs/任务笔记 - FinQA 基准重建.md",
+    "docs/过程总结_新增候选失败类型分类.md",
+    "docs/过程总结_orca_下一步决策.md",
+    "docs/过程总结_协议可用性筛查.md",
+    "outputs/debug/protocol_screening_registry/current_candidate_status_table.md",
+    "outputs/debug/protocol_screening_registry/current_candidate_status_table.json",
+    "outputs/debug/protocol_screening_registry",
+    "outputs/debug/input_smoke_expansion/Xwin-LM-7B/raw_generation_registry.txt",
+    "outputs/debug/input_smoke_expansion/Xwin-LM-7B/smoke_registry.json",
+    "outputs/metadata/provisional/model_registry.labels-xwin-lm-7b.csv",
+    "outputs/metadata/provisional/model_registry.labels-xwin-lm-7b.json",
+    "outputs/provisional/calibration_report.labels-orca-2-7b.provisional.csv",
+    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256/summary.json",
+    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256/predictions.jsonl",
+    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256",
+    "docs/过程总结_输入包装修复.md",
+    "docs/过程总结_主表扩展与新增模型筛查.md",
+    "docs/异常与决策记录.md",
+    "Claude suggestion/诊断更新_2026-04-04.md",
+    "docs/输入接口诊断.md",
+    "Claude suggestion/问题诊断与改进建议.md",
+    "logs/2026-04-04_会话日志.md",
+    "logs/2026-04-03_会话日志.md",
+    "docs/Claude建议核查.md",
+    "docs/组员运行说明.md",
+    "docs/项目总览.md",
+    "docs/模型注册表.md"
+  ]
+}

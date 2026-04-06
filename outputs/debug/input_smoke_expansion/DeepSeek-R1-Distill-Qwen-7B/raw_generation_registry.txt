@@ -1,0 +1,5 @@
+Okay, so I need to figure out how much more, in percentage, was spent on October shares compared to November shares. Let me start by looking at the data provided.
+
+From the table, I see that in October, they bought 29,704 shares at an average price of $5.99 per share. For November, it's 4,468 shares at $3.24 each. 
+
+First, I'll calculate the total amount spent in October. That would be multiplying the number of shares by the average price: 29,704 * $5.99.

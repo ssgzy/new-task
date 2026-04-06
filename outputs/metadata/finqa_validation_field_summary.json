@@ -1,0 +1,146 @@
+{
+  "split": "validation",
+  "official_split_name": "dev",
+  "num_examples": 883,
+  "raw_answer_parse_success": 883,
+  "raw_answer_parse_rate": 1.0,
+  "exe_ans_parse_success": 883,
+  "exe_ans_parse_rate": 1.0,
+  "raw_exe_numeric_mismatch_count": 623,
+  "min_context_char_len": 715,
+  "max_context_char_len": 9029,
+  "mean_context_char_len": 4015.17,
+  "top_level_keys": {
+    "filename": 883,
+    "id": 883,
+    "post_text": 883,
+    "pre_text": 883,
+    "qa": 883,
+    "table": 883,
+    "table_ori": 883,
+    "table_retrieved": 883,
+    "table_retrieved_all": 883,
+    "text_retrieved": 883,
+    "text_retrieved_all": 883
+  },
+  "qa_keys": {
+    "ann_table_rows": 883,
+    "ann_text_rows": 883,
+    "answer": 883,
+    "exe_ans": 883,
+    "explanation": 883,
+    "gold_inds": 883,
+    "model_input": 883,
+    "program": 883,
+    "program_re": 883,
+    "question": 883,
+    "steps": 883,
+    "tfidftopn": 883
+  },
+  "answer_source_counter": {
+    "qa.answer": 871,
+    "qa.exe_ans": 12
+  },
+  "answer_unit_counter": {
+    "percent": 492,
+    "plain": 391
+  },
+  "boolean_answer_counter": {
+    "no": 7,
+    "yes": 3
+  },
+  "gold_numeric_non_null": 883,
+  "gold_numeric_null": 0,
+  "mismatch_examples": [
+    {
+      "id": "C/2017/page_328.pdf-1",
+      "question": "what was the percentage cumulative total return for the five year period ended 31-dec-2017 of citi common stock?",
+      "raw_answer": "93.5%",
+      "raw_numeric": 93.5,
+      "exe_ans": 0.935,
+      "exe_numeric": 0.935,
+      "program": "subtract(193.5, const_100), divide(#0, const_100)"
+    },
+    {
+      "id": "DVN/2007/page_58.pdf-2",
+      "question": "what percentage of the total oil and gas mmboe comes from canada?",
+      "raw_answer": "24.69%",
+      "raw_numeric": 24.69,
+      "exe_ans": 24.69136,
+      "exe_numeric": 24.69136,
+      "program": "divide(60, 243), multiply(#0, const_100)"
+    },
+    {
+      "id": "ETR/2011/page_341.pdf-3",
+      "question": "in 2010 what was the net change in net revenue in millions",
+      "raw_answer": "18.6",
+      "raw_numeric": 18.6,
+      "exe_ans": 19.2,
+      "exe_numeric": 19.2,
+      "program": "add(18.9, 0.3)"
+    },
+    {
+      "id": "ETR/2004/page_213.pdf-2",
+      "question": "what are the deferred fuel cost revisions as a percentage of the increase in fuel cost recovery revenues?",
+      "raw_answer": "60.3%",
+      "raw_numeric": 60.3,
+      "exe_ans": 0.60306,
+      "exe_numeric": 0.60306,
+      "program": "divide(59.1, 98.0)"
+    },
+    {
+      "id": "JPM/2008/page_85.pdf-3",
+      "question": "what was jpmorgan chase & co's common equity tier 1 ( cet1 ) ratio in 2008?",
+      "raw_answer": "10.94%",
+      "raw_numeric": 10.94,
+      "exe_ans": 0.10935,
+      "exe_numeric": 0.10935,
+      "program": "divide(136104, 1244659)"
+    },
+    {
+      "id": "PNC/2013/page_207.pdf-1",
+      "question": "at the end of 2014 , the notional value of derivatives designated as hedging instruments under gaap was what percent of the fair value?",
+      "raw_answer": "3044%",
+      "raw_numeric": 3044.0,
+      "exe_ans": 30.44323,
+      "exe_numeric": 30.44323,
+      "program": "divide(36197, 1189)"
+    },
+    {
+      "id": "PKG/2009/page_65.pdf-4",
+      "question": "what percentage of total purchase commitments are due after 2014?",
+      "raw_answer": "56%",
+      "raw_numeric": 56.0,
+      "exe_ans": 0.56197,
+      "exe_numeric": 0.56197,
+      "program": "divide(25048, 44572)"
+    },
+    {
+      "id": "AOS/2004/page_11.pdf-2",
+      "question": "what percentage of total aggregate contractual obligations is due to purchase obligationst?",
+      "raw_answer": "34%",
+      "raw_numeric": 34.0,
+      "exe_ans": 0.34011,
+      "exe_numeric": 0.34011,
+      "program": "divide(177.3, 521.3)"
+    },
+    {
+      "id": "C/2010/page_223.pdf-3",
+      "question": "in 2010 what was the percentage change of the carrying amount of loan receivable net of the allowance",
+      "raw_answer": "-52.5%",
+      "raw_numeric": -52.5,
+      "exe_ans": -0.52485,
+      "exe_numeric": -0.52485,
+      "program": "subtract(920, 95), subtract(469, 77), subtract(#1, #0), divide(#2, #0)"
+    },
+    {
+      "id": "MSI/2006/page_61.pdf-3",
+      "question": "what was the percent of the total long-term debt obligations that was due after 2011",
+      "raw_answer": "35.1%",
+      "raw_numeric": 35.1,
+      "exe_ans": 0.35099,
+      "exe_numeric": 0.35099,
+      "program": "divide(1451, 4134)"
+    }
+  ]
+}

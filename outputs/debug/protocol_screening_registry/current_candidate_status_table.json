@@ -1,0 +1,101 @@
+{
+  "updated_at": "2026-04-04 HKT",
+  "scope": "protocol screening consolidation only; no canonical outputs modified",
+  "num_models_total": 8,
+  "num_models_in_effective_input_protocol": 2,
+  "formal_instruction_candidates": [
+    "Orca-2-7B",
+    "Zephyr-7B-beta"
+  ],
+  "models_needed_to_reach_min_4": 2,
+  "rows": [
+    {
+      "model_label": "Orca-2-7B",
+      "model_family": "explanation_distill",
+      "current_positioning": "formal candidate",
+      "effective_wrapper": "chatml",
+      "tokenizer_policy": "LlamaTokenizer.from_pretrained; Orca 专用慢 tokenizer 路径；requested_use_fast=false",
+      "entered_effective_input_protocol": true,
+      "current_failure_mode_or_strength": "固定样本已恢复 Answer 行且 valid_parse=True；但 provisional val_calib50 在 128/192/256 下 truncation_without_answer_rate=0.18/0.10/0.10，5 条 256 截断样本都先进入长推理文本，最后没落到 Answer 行",
+      "next_minimal_action": "先把 Orca 保留为“可比较但有残余风险”的正式候选；如果只在 provisional 层继续推进，优先补测 max_new_tokens=384，而不是改 parser 或恢复 canonical",
+      "recommended_to_keep_debugging": true
+    },
+    {
+      "model_label": "Zephyr-7B-beta",
+      "model_family": "alignment_distill",
+      "current_positioning": "formal candidate",
+      "effective_wrapper": "plain",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径；tokenizer 有 chat_template 但当前 registry 默认 plain",
+      "entered_effective_input_protocol": true,
+      "current_failure_mode_or_strength": "v2 smoke 已出现 Answer 行且 valid_parse=True，是当前最稳定的 direct-answer instruction 候选之一",
+      "next_minimal_action": "保持正式候选身份，等待候选池补足后再和 Orca 一起进入下一轮 provisional/canonical 切换评估",
+      "recommended_to_keep_debugging": true
+    },
+    {
+      "model_label": "Lion-7B",
+      "model_family": "adversarial_distillation_anchor",
+      "current_positioning": "anchor / protocol failure case",
+      "effective_wrapper": "alpaca",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "官方 Alpaca wrapper 下仍 Answer=False / valid_parse=False / truncation_suspect=True / repetition_collapse=True",
+      "next_minimal_action": "继续单列为历史锚点/协议失败案例；当前不再把 Lion 拉回正式主表，也不重复跑同一路径 smoke",
+      "recommended_to_keep_debugging": false
+    },
+    {
+      "model_label": "MiniLLM-Llama-7B",
+      "model_family": "base_distilled",
+      "current_positioning": "base baseline",
+      "effective_wrapper": "completion",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "completion 路径下仍未稳定输出 parser v1 需要的 Answer 数值行，但方法谱系上适合作为 base_distilled baseline",
+      "next_minimal_action": "继续作为 base_distilled baseline 单列保留，本阶段不再继续调 wrapper",
+      "recommended_to_keep_debugging": false
+    },
+    {
+      "model_label": "Xwin-LM-7B",
+      "model_family": "alignment",
+      "current_positioning": "expansion candidate",
+      "effective_wrapper": "vicuna",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径；effective tokenizer=TokenizersBackend；pad_token='<unk>' 且 pad_token_id=0",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "补跑 1 条 smoke 时连续生成 128 个 token id 0，即连续 <unk>；decode(skip_special_tokens=True) 后 raw_generation_text 为空，未出现 Answer 行",
+      "next_minimal_action": "不要重复跑同一路径 smoke；如继续投入，只做 Xwin 专项 tokenizer/special-token 与官方 Vicuna 序列化一致性核查",
+      "recommended_to_keep_debugging": true
+    },
+    {
+      "model_label": "DeepSeek-R1-Distill-Qwen-7B",
+      "model_family": "reasoning_distill",
+      "current_positioning": "expansion candidate",
+      "effective_wrapper": "chat_template",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径；effective tokenizer=TokenizersBackend；tokenizer.chat_template 存在，fallback_wrapper=chatml",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "输出直接进入自然语言/think 风格长推理，128 token 内无 Answer 行，valid_parse=False，truncation_suspect=True",
+      "next_minimal_action": "查官方 wrapper；先确认是否存在更适合 direct-answer 的官方对话模板/非思维链入口，再决定是否继续 provisional smoke",
+      "recommended_to_keep_debugging": true
+    },
+    {
+      "model_label": "OpenR1-Distill-7B",
+      "model_family": "long_reasoning_distill",
+      "current_positioning": "expansion candidate",
+      "effective_wrapper": "plain",
+      "tokenizer_policy": "AutoTokenizer.from_pretrained 默认路径；effective tokenizer=Qwen2Tokenizer；chat_template 不存在；已做 pad/eos 对齐",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "plain 路径会出现 Answer 行，但只是回显 'Answer: <numeric value>' 占位符且 multiple_answer_lines=True，valid_parse=False；chatml 路径则进入 \\boxed{} / 长推理风格且无 Answer 行",
+      "next_minimal_action": "查官方 wrapper；优先确认该模型推荐的推理/对话序列化方式，而不是继续在 plain/chatml 之间盲试或改 parser",
+      "recommended_to_keep_debugging": true
+    },
+    {
+      "model_label": "LaMini-LLaMA-7B",
+      "model_family": "instruction_distill",
+      "current_positioning": "pending",
+      "effective_wrapper": "alpaca (placeholder only)",
+      "tokenizer_policy": "未加载；当前 repo_id=MBZUAI/LaMini-LLaMA-7B 不可公开解析，snapshot_path 缺失",
+      "entered_effective_input_protocol": false,
+      "current_failure_mode_or_strength": "pending_repo_id，占位未跑 smoke，当前没有可解释的协议结论",
+      "next_minimal_action": "等待一个可公开访问且可复现的 repo_id；在此之前不下载、不 smoke、不计入正式候选",
+      "recommended_to_keep_debugging": false
+    }
+  ]
+}

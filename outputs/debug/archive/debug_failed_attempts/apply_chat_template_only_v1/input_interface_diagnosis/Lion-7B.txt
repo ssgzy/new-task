@@ -1,0 +1,57 @@
+# 输入接口诊断：Lion-7B
+
+- 模型路径：`/Users/sam/.cache/huggingface/hub/models--YuxinJiang--lion-7b/snapshots/a55f94073db93bca1c01ca9154c47198508dc966`
+- 是否 chat/instruction tuned：`True`
+- tokenizer.chat_template 是否存在：`False`
+- 当前 runner 请求渲染模式：`auto`
+- 当前 runner 实际渲染模式：`plain`
+- 是否使用 chat_template：`False`
+- fallback 策略：`tokenizer.chat_template_missing_use_plain_prompt`
+- 是否出现 assistant generation boundary：`False`
+
+## tokenizer special tokens
+- bos_token: `<s>` / id=`1`
+- eos_token: `</s>` / id=`2`
+- pad_token: `[PAD]` / id=`32000`
+- unk_token: `<unk>` / id=`0`
+- special_tokens_map: `{"bos_token": "<s>", "eos_token": "</s>", "unk_token": "<unk>", "pad_token": "[PAD]"}`
+
+## model config tokens
+- model_type: `llama`
+- architectures: `['LlamaForCausalLM']`
+- model.config.eos_token_id: `2`
+- model.config.pad_token_id: `0`
+- model.config.bos_token_id: `1`
+- model.config.unk_token_id: `None`
+- token id 对齐是否整体合理：`False`
+- token id 对齐检查：`{"eos_token_id_match_tokenizer": true, "pad_token_id_reasonable": false, "bos_token_id_match_tokenizer": true, "unk_token_id_reasonable": true}`
+
+## tokenizer fallback 状态
+- pad_token 是否在加载后由 eos_token 回填：`False`
+- 原始 pad_token: `[PAD]`
+- 原始 pad_token_id: `32000`
+
+## 渲染后 prompt 前 500 字符
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+## 渲染后 prompt 后 300 字符
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```

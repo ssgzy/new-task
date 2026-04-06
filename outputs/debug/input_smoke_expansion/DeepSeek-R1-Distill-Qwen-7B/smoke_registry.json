@@ -1,0 +1,29 @@
+{
+  "requested_prompt_mode": "registry",
+  "effective_wrapper": "chat_template",
+  "wrapper_family": "chatml",
+  "has_assistant_generation_boundary": true,
+  "prompt_fallback_reason": "",
+  "rendered_prompt_head_500": "<｜begin▁of▁sentence｜>You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value><｜User｜>### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased",
+  "rendered_prompt_tail_300": "hheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?<｜Assistant｜><think>\n",
+  "tokenized_input_length": 479,
+  "raw_generation_text": "Okay, so I need to figure out how much more, in percentage, was spent on October shares compared to November shares. Let me start by looking at the data provided.\n\nFrom the table, I see that in October, they bought 29,704 shares at an average price of $5.99 per share. For November, it's 4,468 shares at $3.24 each. \n\nFirst, I'll calculate the total amount spent in October. That would be multiplying the number of shares by the average price: 29,704 * $5.99.",
+  "answer_appears": false,
+  "valid_parse": false,
+  "truncation_suspect": true,
+  "repetition_collapse": false,
+  "parse_error_reason": "missing_answer_line",
+  "answer_line_raw": "",
+  "parse": {
+    "format_ok": false,
+    "valid_parse": false,
+    "pred_value": null,
+    "pred_unit_type": null,
+    "answer_line_raw": "",
+    "multiple_answer_lines": false,
+    "truncated_suspect": true,
+    "parse_error_reason": "missing_answer_line"
+  },
+  "new_tokens": 128,
+  "latency_ms": 12601.27
+}

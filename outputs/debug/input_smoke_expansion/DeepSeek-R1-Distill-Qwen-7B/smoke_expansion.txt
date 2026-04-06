@@ -1,0 +1,46 @@
+# 扩展模型 smoke：DeepSeek-R1-Distill-Qwen-7B
+
+- registry status：`available_local`
+- model_family：`reasoning_distill`
+- wrapper family：`chatml`
+- tokenizer class：`TokenizersBackend`
+- tokenizer is_fast：`True`
+- tokenizer.chat_template：`True`
+
+- recommended wrapper mode：`registry`
+- effective wrapper：`chat_template`
+- Answer: 是否出现：`False`
+- valid_parse：`False`
+- truncation_suspect：`True`
+- repetition_collapse：`False`
+- parse_error_reason：`missing_answer_line`
+
+## rendered prompt head
+```text
+<｜begin▁of▁sentence｜>You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value><｜User｜>### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased
+```
+
+## rendered prompt tail
+```text
+hheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?<｜Assistant｜><think>
+
+```
+
+## raw generation
+```text
+Okay, so I need to figure out how much more, in percentage, was spent on October shares compared to November shares. Let me start by looking at the data provided.
+
+From the table, I see that in October, they bought 29,704 shares at an average price of $5.99 per share. For November, it's 4,468 shares at $3.24 each. 
+
+First, I'll calculate the total amount spent in October. That would be multiplying the number of shares by the average price: 29,704 * $5.99.
+```

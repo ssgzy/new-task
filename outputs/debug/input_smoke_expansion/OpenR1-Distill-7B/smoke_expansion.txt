@@ -1,0 +1,63 @@
+# 扩展模型 smoke：OpenR1-Distill-7B
+
+- registry status：`available_local`
+- model_family：`long_reasoning_distill`
+- wrapper family：`chatml`
+- tokenizer class：`Qwen2Tokenizer`
+- tokenizer is_fast：`True`
+- tokenizer.chat_template：`False`
+
+- recommended wrapper mode：`plain`
+- effective wrapper：`plain`
+- Answer: 是否出现：`True`
+- valid_parse：`False`
+- truncation_suspect：`False`
+- repetition_collapse：`False`
+- parse_error_reason：`invalid_numeric_literal`
+
+## rendered prompt head
+```text
+System:
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value>
+
+User:
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of p
+```
+
+## rendered prompt tail
+```text
+per month of the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?
+
+```
+
+## raw generation
+```text
+Answer: <numeric> % 
+
+## Output Format
+Answer: <numeric value>
+</output>
+
+## Examples
+```input
+# Task 3
+You will be given a problem. Please reason step by step, and put your final answer within \boxed{}:
+# Task 3
+# 2008 Fourth Quarter Equity Security Purchases
+# Problem
+The following table provides information regarding the purchases of equity securities during the fourth quarter of 2008:
+
+| Month       | Number of Shares Purchased | Average Price Per Share | Total Expenditure |
+|-------------|---------------------------|------------------------|--------------------|
+
+```

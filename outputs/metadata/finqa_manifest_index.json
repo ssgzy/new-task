@@ -1,0 +1,23 @@
+[
+  {
+    "manifest_name": "val_calib50",
+    "split": "validation",
+    "num_examples": 50,
+    "seed": 42,
+    "description": "Validation split 中按固定 seed 打乱后选出的前 50 条，用于 max_new_tokens 长度校准。"
+  },
+  {
+    "manifest_name": "val_screen200",
+    "split": "validation",
+    "num_examples": 200,
+    "seed": 42,
+    "description": "Validation split 中与 val_calib50 不重叠的后续 200 条，用于 benchmark 准入筛选。"
+  },
+  {
+    "manifest_name": "validation883",
+    "split": "validation",
+    "num_examples": 883,
+    "seed": 42,
+    "description": "Validation split 的完整 883 条标准化样本，用于通过准入后的完整验证。"
+  }
+]

@@ -1,0 +1,16 @@
+# 输入接口诊断 Expansion：LaMini-LLaMA-7B
+
+- registry status：`pending_repo_id`
+- group：`main_candidate_expansion`
+- model_family：`instruction_distill`
+- wrapper family：`alpaca`
+- default wrapper：`alpaca`
+- tokenizer class：`None`
+- tokenizer is_fast：`None`
+- tokenizer.chat_template：`None`
+- tokenizer pad/eos/bos/unk：`None` / `None` / `None` / `None`
+- tokenizer pad/eos id：`None` / `None`
+- model config pad/eos id：`None` / `None`
+- token id 对齐是否合理：`None`
+
+- skip reason：repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round

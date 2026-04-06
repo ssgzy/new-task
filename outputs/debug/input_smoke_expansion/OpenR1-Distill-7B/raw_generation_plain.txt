@@ -1,0 +1,17 @@
+Answer: <numeric> % 
+
+## Output Format
+Answer: <numeric value>
+</output>
+
+## Examples
+```input
+# Task 3
+You will be given a problem. Please reason step by step, and put your final answer within \boxed{}:
+# Task 3
+# 2008 Fourth Quarter Equity Security Purchases
+# Problem
+The following table provides information regarding the purchases of equity securities during the fourth quarter of 2008:
+
+| Month       | Number of Shares Purchased | Average Price Per Share | Total Expenditure |
+|-------------|---------------------------|------------------------|--------------------|

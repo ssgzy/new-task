@@ -1,0 +1,44 @@
+{
+  "model_label": "LaMini-LLaMA-7B",
+  "group": "main_candidate_expansion",
+  "model_family": "instruction_distill",
+  "repo_id": "MBZUAI/LaMini-LLaMA-7B",
+  "registry_status": "pending_repo_id",
+  "snapshot_path": "",
+  "wrapper_family": "alpaca",
+  "default_wrapper": "alpaca",
+  "allow_chat_template": false,
+  "fallback_wrapper": "alpaca",
+  "wrapper_notes": "placeholder expansion candidate; repo_id is unresolved in the current round, so Alpaca-style serializer is only a provisional fallback assumption and should not be used as final evidence",
+  "tokenizer_load_policy": {
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "",
+    "effective_tokenizer_class_name": "",
+    "effective_tokenizer_is_fast": null,
+    "trust_remote_code": false,
+    "notes": ""
+  },
+  "tokenizer": {
+    "class_name": null,
+    "is_fast": null,
+    "chat_template_exists": null,
+    "pad_token": null,
+    "pad_token_id": null,
+    "eos_token": null,
+    "eos_token_id": null,
+    "bos_token": null,
+    "bos_token_id": null,
+    "unk_token": null,
+    "unk_token_id": null,
+    "special_tokens_map": {}
+  },
+  "model_config": {
+    "model_type": null,
+    "pad_token_id": null,
+    "eos_token_id": null,
+    "bos_token_id": null,
+    "token_id_alignment_reasonable": null
+  },
+  "prompt_candidates": [],
+  "skip_reason": "repo placeholder only; MBZUAI/LaMini-LLaMA-7B is currently not publicly resolvable via HF API, so do not download or smoke-test this label in the current round"
+}

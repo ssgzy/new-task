@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "model_label": "Lion-7B",
+      "effective_wrapper": "alpaca",
+      "tokenizer_requested_use_fast": null,
+      "tokenizer_requested_class": "AutoTokenizer",
+      "tokenizer_effective_class": "TokenizersBackend",
+      "tokenizer_effective_is_fast": true,
+      "answer_appears": false,
+      "valid_parse": false,
+      "truncation_suspect": true,
+      "repetition_collapse": true,
+      "parse_error_reason": "missing_answer_line"
+    },
+    {
+      "model_label": "Orca-2-7B",
+      "effective_wrapper": "chatml",
+      "tokenizer_requested_use_fast": false,
+      "tokenizer_requested_class": "LlamaTokenizer",
+      "tokenizer_effective_class": "LlamaTokenizer",
+      "tokenizer_effective_is_fast": true,
+      "answer_appears": true,
+      "valid_parse": true,
+      "truncation_suspect": false,
+      "repetition_collapse": false,
+      "parse_error_reason": null
+    }
+  ]
+}

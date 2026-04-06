@@ -1,0 +1,13 @@
+**Final Answer**
+\boxed{21}
+</think>
+
+To determine how much more, in percentage, was spent on October shares compared to November shares, we need to follow these steps:
+
+1. **Identify the relevant data from the table:**
+   - October shares: 29,704 at an average price of $5.99
+   - November shares: 4,468 at an average price of $3.24
+
+2. **Calculate the total amount spent in October:**
+   \[
+   \text{October Total} = 29,704 \

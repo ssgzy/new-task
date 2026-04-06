@@ -1,0 +1,9 @@
+# Wrapper Registry Expansion：Xwin-LM-7B
+
+- group：`main_candidate_expansion`
+- model_family：`alignment`
+- wrapper family：`vicuna`
+- default wrapper：`vicuna`
+- allow chat_template：`False`
+- fallback wrapper：`vicuna`
+- notes：main-table expansion candidate; use the Vicuna-style USER/ASSISTANT serializer from the official Xwin-LM model card
