@@ -1,0 +1,2 @@
+model_label,group,repo_id,registry_status,snapshot_path,stage,max_new_tokens,run_status,qualified_for_full_validation,runtime_success,format_ok,valid_parse,em,tm,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens,truncation_without_answer_rate,error
+Yi-1.5-6B-Chat,mainstream_instruction_prescreen,01-ai/Yi-1.5-6B-Chat,available_local,/Users/sam/.cache/huggingface/hub/models--01-ai--Yi-1.5-6B-Chat/snapshots/771924d1c83d67527d665913415d7086f11ea9c0,screen,256,ok,yes,1.0,0.905,0.71,0.05,0.085,5071.9,3.3548,12123609088,17.02,0.005,

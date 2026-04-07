@@ -1,0 +1,58 @@
+{
+  "model_label": "Mistral-7B-Instruct-v0.3",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_screen200.jsonl",
+  "num_examples": 200,
+  "runtime_success": 1.0,
+  "format_ok": 1.0,
+  "valid_parse": 0.77,
+  "em": 0.095,
+  "tm": 0.155,
+  "truncation_without_answer_rate": 0.0,
+  "answer_present_rate": 1.0,
+  "valid_parse_rate": 0.77,
+  "avg_latency_ms": 5074.8,
+  "mean_output_tokens": 14.36,
+  "mean_new_tokens": 14.36,
+  "p95_new_tokens": 38,
+  "tok_per_sec": 2.8287,
+  "peak_vram": 14497127168,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 256,
+  "prompt_render_mode": "auto",
+  "repetition_penalty": 1.1,
+  "tokenizer_load_policy": {
+    "model_label": "Mistral-7B-Instruct-v0.3",
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior",
+    "config_patch_notes": []
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": null,
+      "tokenizer_pad_token_id": null,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": null,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "</s>",
+      "tokenizer_pad_token_id": 2,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 2,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [
+      "set tokenizer.pad_token = tokenizer.eos_token",
+      "set model.config.pad_token_id = tokenizer.pad_token_id"
+    ],
+    "changed": true
+  }
+}

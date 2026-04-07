@@ -274,3 +274,87 @@
 - 已启动 `Mistral-7B-Instruct-v0.3 / val_screen200 / 256`。
 - 当前逐样本输出已开始落盘：
   - 当前约 `65/200`
+
+## 2026-04-07 Mistral 最终结果
+- 当前正式结果：
+  - `runtime_success = 1.000`
+  - `format_ok = 1.000`
+  - `valid_parse = 0.770`
+  - `truncation_without_answer_rate = 0.000`
+  - `EM = 0.095`
+  - `TM = 0.155`
+- 当前结论：
+  - `Mistral-7B-Instruct-v0.3` 通过这轮冻结门槛
+
+## 2026-04-07 Qwen2.5 启动 checkpoint
+- 已启动 `Qwen2.5-7B-Instruct / val_screen200 / 256`。
+- 当前仅见外层 screening 进程，逐样本输出还未落盘。
+
+## 2026-04-07 Qwen2.5 最终结果
+- 当前正式结果：
+  - `runtime_success = 1.000`
+  - `format_ok = 1.000`
+  - `valid_parse = 0.980`
+  - `truncation_without_answer_rate = 0.000`
+  - `EM = 0.250`
+  - `TM = 0.335`
+- 当前结论：
+  - `Qwen2.5-7B-Instruct` 通过这轮冻结门槛
+
+## 2026-04-07 Yi 启动计划
+- 下一模型：
+  - `Yi-1.5-6B-Chat / val_screen200 / 256`
+- 当前执行方式不变：
+  - 先启动
+  - 第一批样本落盘后立即更新文档
+
+## 2026-04-07 Yi 启动 checkpoint
+- 当前第一批样本已落盘：
+  - `predictions_lines ≈ 4`
+
+## 2026-04-07 Yi 最终结果
+- 当前正式结果：
+  - `runtime_success = 1.000`
+  - `format_ok = 0.905`
+  - `valid_parse = 0.710`
+  - `truncation_without_answer_rate = 0.005`
+  - `EM = 0.050`
+  - `TM = 0.085`
+- 当前结论：
+  - `Yi-1.5-6B-Chat` 通过这轮冻结门槛
+
+## 2026-04-07 ChatGLM3 启动 checkpoint
+- 当前模型：
+  - `ChatGLM3-6B / val_screen200 / 256`
+- 当前落盘情况：
+  - `predictions.jsonl` 已开始写入
+  - 当前 `predictions_lines = 17`
+  - `summary.json` 尚未生成
+- 当前说明：
+  - 这次查询后已刷新 `screen200_status_table`
+  - 当前只记录中间 checkpoint，不提前写最终结论
+
+## 2026-04-07 ChatGLM3 最终结果
+- 当前正式结果：
+  - `runtime_success = 1.000`
+  - `format_ok = 0.830`
+  - `valid_parse = 0.595`
+  - `truncation_without_answer_rate = 0.045`
+  - `EM = 0.020`
+  - `TM = 0.040`
+- 一致性：
+  - `predictions.jsonl = 200`
+  - `summary.json.num_examples = 200`
+- 当前结论：
+  - `ChatGLM3-6B` 未通过冻结门槛
+  - 主因是 `valid_parse` 比门槛低 `0.005`
+
+## 2026-04-07 screen200 当前汇总
+- 当前通过：
+  - `Orca-2-7B`
+  - `Mistral-7B-Instruct-v0.3`
+  - `Qwen2.5-7B-Instruct`
+  - `Yi-1.5-6B-Chat`
+- 当前未通过：
+  - `Zephyr-7B-beta`
+  - `ChatGLM3-6B`

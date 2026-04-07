@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-04-07 22:30 HKT",
+  "stage": "val_screen200",
+  "scope": "6-model provisional",
+  "frozen_decode": {
+    "max_new_tokens": 256
+  },
+  "thresholds": {
+    "runtime_success": 0.95,
+    "format_ok": 0.8,
+    "valid_parse": 0.6,
+    "truncation_without_answer_rate": 0.1
+  },
+  "results": [
+    {
+      "model_label": "Orca-2-7B",
+      "runtime_success": 1.0,
+      "format_ok": 0.96,
+      "valid_parse": 0.845,
+      "truncation_without_answer_rate": 0.025,
+      "em": 0.03,
+      "tm": 0.075,
+      "qualified_for_full_validation": true
+    },
+    {
+      "model_label": "Zephyr-7B-beta",
+      "runtime_success": 1.0,
+      "format_ok": 0.43,
+      "valid_parse": 0.095,
+      "truncation_without_answer_rate": 0.105,
+      "em": 0.01,
+      "tm": 0.02,
+      "qualified_for_full_validation": false
+    },
+    {
+      "model_label": "Mistral-7B-Instruct-v0.3",
+      "runtime_success": 1.0,
+      "format_ok": 1.0,
+      "valid_parse": 0.77,
+      "truncation_without_answer_rate": 0.0,
+      "em": 0.095,
+      "tm": 0.155,
+      "qualified_for_full_validation": true
+    },
+    {
+      "model_label": "Qwen2.5-7B-Instruct",
+      "runtime_success": 1.0,
+      "format_ok": 1.0,
+      "valid_parse": 0.98,
+      "truncation_without_answer_rate": 0.0,
+      "em": 0.25,
+      "tm": 0.335,
+      "qualified_for_full_validation": true
+    },
+    {
+      "model_label": "Yi-1.5-6B-Chat",
+      "runtime_success": 1.0,
+      "format_ok": 0.905,
+      "valid_parse": 0.71,
+      "truncation_without_answer_rate": 0.005,
+      "em": 0.05,
+      "tm": 0.085,
+      "qualified_for_full_validation": true
+    },
+    {
+      "model_label": "ChatGLM3-6B",
+      "runtime_success": 1.0,
+      "format_ok": 0.83,
+      "valid_parse": 0.595,
+      "truncation_without_answer_rate": 0.045,
+      "em": 0.02,
+      "tm": 0.04,
+      "qualified_for_full_validation": false
+    }
+  ],
+  "qualified_models": [
+    "Orca-2-7B",
+    "Mistral-7B-Instruct-v0.3",
+    "Qwen2.5-7B-Instruct",
+    "Yi-1.5-6B-Chat"
+  ],
+  "failed_models": [
+    "Zephyr-7B-beta",
+    "ChatGLM3-6B"
+  ]
+}

@@ -1,0 +1,2 @@
+model_label,group,repo_id,registry_status,snapshot_path,stage,max_new_tokens,run_status,qualified_for_full_validation,runtime_success,format_ok,valid_parse,em,tm,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens,truncation_without_answer_rate,error
+Qwen2.5-7B-Instruct,mainstream_instruction_prescreen,Qwen/Qwen2.5-7B-Instruct,available_local,/Users/sam/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28,screen,256,ok,yes,1.0,1.0,0.98,0.25,0.335,3933.42,2.0504,15232430080,8.06,0.0,

@@ -1,0 +1,2 @@
+model_label,group,repo_id,registry_status,snapshot_path,stage,max_new_tokens,run_status,qualified_for_full_validation,runtime_success,format_ok,valid_parse,em,tm,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens,truncation_without_answer_rate,error
+ChatGLM3-6B,mainstream_instruction_prescreen,THUDM/chatglm3-6b,available_local,/Users/sam/.cache/huggingface/hub/models--THUDM--chatglm3-6b/snapshots/e9e0406d062cdb887444fe5bd546833920abd4ac,screen,256,ok,no,1.0,0.83,0.595,0.02,0.04,5455.98,4.5152,13666592000,24.64,0.045,
