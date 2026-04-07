@@ -51,6 +51,11 @@ cat outputs/metadata/provisional/model_registry.labels-qwen2-5-7b-instruct.json
 
 ## 直接运行 validation883
 
+### 兼容旧 shell wrapper 的默认命令
+```bash
+bash scripts/run_assigned_model_v1.sh --label "Qwen2.5-7B-Instruct" --download-model
+```
+
 ### 推荐命令：使用项目 wrapper
 ```bash
 python scripts/run_validation883_assigned_v1.py --label "Qwen2.5-7B-Instruct" --resume-existing
@@ -68,6 +73,9 @@ python scripts/run_validation883_assigned_v1.py --label "Qwen2.5-7B-Instruct" --
   - `summary.json`
   - `predictions.jsonl`
   - `report.csv`
+- 说明：
+  - `scripts/run_assigned_model_v1.sh` 现在默认也会落到同一条 `validation883` 路径
+  - 只有显式加 `--legacy-screen-only` 才会回退到旧的 `screen200` 流程
 
 ## 如需手动运行底层 benchmark
 

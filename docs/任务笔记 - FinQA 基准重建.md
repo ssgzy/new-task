@@ -377,3 +377,12 @@
 - 当前结论：
   - strict 主线未被替换
   - relaxed scoring 已接入，但尚未重跑全量 `validation883`
+
+## 2026-04-07 validation883 默认入口修正
+- 当前问题：
+  - 旧的 [[组员运行说明]] 还停留在 `screen200` 阶段
+  - 容易让组员误以为默认仍只跑 `val_screen200`
+- 已完成：
+  - `scripts/run_assigned_model_v1.sh` 默认入口改到 `validation883`
+  - `[[组员运行说明]]` 改成历史说明
+  - `[[组员运行说明_validation883]]` 作为当前默认入口
