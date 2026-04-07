@@ -1,0 +1,40 @@
+[
+  {
+    "model_label": "Mistral-7B-Instruct-v0.3",
+    "status": "ok",
+    "predictions_lines": 883,
+    "runtime_success": 1.0,
+    "format_ok": 0.998867,
+    "valid_parse": 0.778029,
+    "strict_em": 0.093998,
+    "strict_tm": 0.166478,
+    "relaxed_em": 0.105323,
+    "relaxed_tm": 0.19479,
+    "relaxed_gap_tm": 0.028313,
+    "truncation_without_answer_rate": 0.0,
+    "avg_latency_ms": 4628.89,
+    "tok_per_sec": 2.7585,
+    "peak_vram": 14496533760,
+    "mean_output_tokens": 12.77,
+    "notes": ""
+  },
+  {
+    "model_label": "Qwen2.5-7B-Instruct",
+    "status": "ok",
+    "predictions_lines": 883,
+    "runtime_success": 1.0,
+    "format_ok": 0.997735,
+    "valid_parse": 0.98188,
+    "strict_em": 0.225368,
+    "strict_tm": 0.359003,
+    "relaxed_em": 0.225368,
+    "relaxed_tm": 0.360136,
+    "relaxed_gap_tm": 0.001133,
+    "truncation_without_answer_rate": 0.0,
+    "avg_latency_ms": 3369.95,
+    "tok_per_sec": 2.4163,
+    "peak_vram": 15232224512,
+    "mean_output_tokens": 8.14,
+    "notes": ""
+  }
+]

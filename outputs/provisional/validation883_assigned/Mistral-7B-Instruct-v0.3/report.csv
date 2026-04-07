@@ -1,0 +1,2 @@
+model_label,stage,max_new_tokens,runtime_success,format_ok,valid_parse,em,tm,strict_em,strict_tm,relaxed_em,relaxed_tm,relaxed_gap_tm,truncation_without_answer_rate,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens
+Mistral-7B-Instruct-v0.3,validation883,256,1.0,0.998867,0.778029,0.093998,0.166478,0.093998,0.166478,0.105323,0.19479,0.028313,0.0,4628.89,2.7585,14496533760,12.77

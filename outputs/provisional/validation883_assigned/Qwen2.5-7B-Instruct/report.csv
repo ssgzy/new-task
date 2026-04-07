@@ -1,0 +1,2 @@
+model_label,stage,max_new_tokens,runtime_success,format_ok,valid_parse,em,tm,strict_em,strict_tm,relaxed_em,relaxed_tm,relaxed_gap_tm,truncation_without_answer_rate,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens
+Qwen2.5-7B-Instruct,validation883,256,1.0,0.997735,0.98188,0.225368,0.359003,0.225368,0.359003,0.225368,0.360136,0.001133,0.0,3369.95,2.4163,15232224512,8.14

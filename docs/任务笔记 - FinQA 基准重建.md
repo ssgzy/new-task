@@ -386,3 +386,64 @@
   - `scripts/run_assigned_model_v1.sh` 默认入口改到 `validation883`
   - `[[组员运行说明]]` 改成历史说明
   - `[[组员运行说明_validation883]]` 作为当前默认入口
+
+## 2026-04-07 validation883 执行名单与首个模型
+- 当前新决策：
+  - `validation883` 一共跑 `5` 个模型，而不是只跑 `4` 个
+- 当前名单：
+  - `Orca-2-7B`
+  - `Mistral-7B-Instruct-v0.3`
+  - `Qwen2.5-7B-Instruct`
+  - `Yi-1.5-6B-Chat`
+  - `ChatGLM3-6B`
+- `ChatGLM3-6B` 当前定位：
+  - `boundary-pass candidate`
+- 当前首个启动模型：
+  - `Qwen2.5-7B-Instruct`
+- 当前 checkpoint：
+  - wrapper 与内层 benchmark 进程都已启动
+  - 输出目录已创建
+  - `predictions.jsonl` 已开始落盘
+  - 当前约 `770/883`
+  - 当前活跃速度约 `2` 条 / `5s`
+  - 估计剩余约 `5 - 10` 分钟
+
+## 2026-04-08 Qwen2.5 validation883 完成
+- 一致性：
+  - `predictions.jsonl = 883`
+  - `summary.json.num_examples = 883`
+- 当前正式结果：
+  - `Strict TM = 0.359003`
+  - `Strict EM = 0.225368`
+  - `Relaxed TM = 0.360136`
+  - `Relaxed gap = 0.001133`
+  - `format_ok = 0.997735`
+  - `valid_parse = 0.981880`
+  - `truncation_without_answer_rate = 0.000000`
+- 当前结论：
+  - `Qwen2.5-7B-Instruct` 已成为本轮第一个完成 `validation883` 的模型
+
+## 2026-04-08 validation883 汇总与 Mistral 启动
+- 已新增汇总表：
+  - `outputs/provisional/validation883_assigned/validation883_status_table.md`
+  - `outputs/provisional/validation883_assigned/validation883_status_table.json`
+- 当前状态：
+  - `Qwen2.5-7B-Instruct` 已完成
+  - `Mistral-7B-Instruct-v0.3` 已启动
+  - `Mistral` 当前约 `778/883`
+  - 当前估计剩余约 `8 - 15` 分钟
+
+## 2026-04-08 Mistral validation883 完成
+- 一致性：
+  - `predictions.jsonl = 883`
+  - `summary.json.num_examples = 883`
+- 当前正式结果：
+  - `Strict TM = 0.166478`
+  - `Strict EM = 0.093998`
+  - `Relaxed TM = 0.194790`
+  - `Relaxed gap = 0.028313`
+  - `format_ok = 0.998867`
+  - `valid_parse = 0.778029`
+  - `truncation_without_answer_rate = 0.000000`
+- 当前结论：
+  - `Mistral-7B-Instruct-v0.3` 已成为本轮第二个完成 `validation883` 的模型

@@ -7,7 +7,7 @@
     "base_model_family": "mistral",
     "notes": "official mainstream instruct prescreen candidate; prefer tokenizer chat_template path in provisional smoke",
     "repo_id": "mistralai/Mistral-7B-Instruct-v0.3",
-    "status": "available_or_downloaded",
+    "status": "available_local",
     "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
     "resolved_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
     "num_siblings": 15,
