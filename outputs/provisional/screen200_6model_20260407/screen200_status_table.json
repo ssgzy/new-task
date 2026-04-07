@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T16:42:13.813916+08:00",
+  "generated_at": "2026-04-07T21:08:40.469987+08:00",
   "max_new_tokens": 256,
   "thresholds": {
     "runtime_success": 0.95,
@@ -36,18 +36,18 @@
       "registry_status": "available_local",
       "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
       "max_new_tokens": 256,
-      "run_status": "pending",
-      "qualified_by_frozen_rule": "pending",
-      "runtime_success": null,
-      "format_ok": null,
-      "valid_parse": null,
-      "truncation_without_answer_rate": null,
-      "em": null,
-      "tm": null,
-      "avg_latency_ms": null,
-      "tok_per_sec": null,
-      "peak_vram": null,
-      "mean_output_tokens": null,
+      "run_status": "ok",
+      "qualified_by_frozen_rule": "no",
+      "runtime_success": 1.0,
+      "format_ok": 0.43,
+      "valid_parse": 0.095,
+      "truncation_without_answer_rate": 0.105,
+      "em": 0.01,
+      "tm": 0.02,
+      "avg_latency_ms": 18555.28,
+      "tok_per_sec": 7.6337,
+      "peak_vram": 14484569856,
+      "mean_output_tokens": 141.65,
       "note": ""
     },
     {
@@ -57,7 +57,7 @@
       "registry_status": "available_local",
       "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
       "max_new_tokens": 256,
-      "run_status": "pending",
+      "run_status": "running_no_summary",
       "qualified_by_frozen_rule": "pending",
       "runtime_success": null,
       "format_ok": null,
@@ -69,7 +69,7 @@
       "tok_per_sec": null,
       "peak_vram": null,
       "mean_output_tokens": null,
-      "note": ""
+      "note": "predictions_lines=65"
     },
     {
       "model_label": "Qwen2.5-7B-Instruct",

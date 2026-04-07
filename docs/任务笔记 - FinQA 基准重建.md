@@ -201,3 +201,76 @@
 - `Zephyr-7B-beta` 已启动：
   - 但随后按用户要求停止
   - 半截目录已归档，不计入当前活跃汇总表
+
+## 2026-04-07 恢复运行检查
+- 用户已确认继续。
+- 重新检查发现：
+  - 活跃目录中的 `Zephyr-7B-beta` 目前已有 `89/200` 行
+  - 但没有 `summary.json`
+  - 也没有可见的外层 `run_qualification_v1.py` 活进程
+- 结论：
+  - 当前 `Zephyr` 目录属于未完成中间态
+  - 后续若继续，需要先确认是否仍有内层 benchmark 进程
+
+## 2026-04-07 当前 Zephyr checkpoint
+- 已确认：
+  - 外层 `run_qualification_v1.py` 不在
+  - 但内层 `run_finqa_local_benchmark_v1.py` 仍在运行
+- 当前进度：
+  - `Zephyr-7B-beta` 已写入约 `181/200`
+  - `summary.json` 尚未生成
+- 当前策略：
+  - 不重启
+  - 直接监控现有内层 benchmark 直到生成 `summary.json`
+
+## 2026-04-07 Zephyr 当前结论
+- `summary.json` 已生成，但当前不能直接采纳。
+- 原因：
+  - `summary.json.num_examples = 200`
+  - `predictions.jsonl = 195` 行
+- 因此这份结果属于 `provisional_suspect`。
+- 当前最小修复方案：
+  - 保留并归档当前目录
+  - 单独重跑 `Zephyr-7B-beta / val_screen200 / 256`
+  - 重建 `screen200_status_table`
+
+## 2026-04-07 Zephyr 修复执行授权
+- 用户已批准只做 `Zephyr-7B-beta` 的最小修复。
+- 修复目标：
+  - 让 `summary.json.num_examples` 与 `predictions.jsonl` 行数一致
+  - 修复后再决定 `Zephyr` 是否正式计入 `screen200` 结果
+
+## 2026-04-07 Zephyr 修复前清场
+- 已归档可疑目录：
+  - `outputs/provisional/archive/zephyr-screen200-suspect-20260407T193617/Zephyr-7B-beta/`
+- 当前活跃 `screen200` 表已刷新：
+  - `Zephyr-7B-beta` 回到 `pending`
+- 下一步直接执行：
+  - `Zephyr-7B-beta / val_screen200 / 256` 单模型重跑
+
+## 2026-04-07 Zephyr 重跑启动 checkpoint
+- 已重新启动 `Zephyr-7B-beta / val_screen200 / 256`。
+- 当前仅看到新的外层进程：
+  - `run_qualification_v1.py`
+- 新的逐样本文件已开始落盘：
+  - 当前约 `70/200`
+
+## 2026-04-07 Zephyr 最终结果
+- 本次重跑已修复一致性问题：
+  - `predictions.jsonl = 200`
+  - `summary.json.num_examples = 200`
+- 当前正式结果：
+  - `runtime_success = 1.000`
+  - `format_ok = 0.430`
+  - `valid_parse = 0.095`
+  - `truncation_without_answer_rate = 0.105`
+  - `EM = 0.010`
+  - `TM = 0.020`
+- 当前结论：
+  - `Zephyr-7B-beta` 在这轮冻结门槛下不合格
+  - 原因是指标本身不足，不再是证据文件不一致
+
+## 2026-04-07 Mistral 启动 checkpoint
+- 已启动 `Mistral-7B-Instruct-v0.3 / val_screen200 / 256`。
+- 当前逐样本输出已开始落盘：
+  - 当前约 `65/200`

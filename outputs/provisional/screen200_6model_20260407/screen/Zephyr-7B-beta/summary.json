@@ -1,0 +1,55 @@
+{
+  "model_label": "Zephyr-7B-beta",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_screen200.jsonl",
+  "num_examples": 200,
+  "runtime_success": 1.0,
+  "format_ok": 0.43,
+  "valid_parse": 0.095,
+  "em": 0.01,
+  "tm": 0.02,
+  "truncation_without_answer_rate": 0.105,
+  "answer_present_rate": 0.43,
+  "valid_parse_rate": 0.095,
+  "avg_latency_ms": 18555.28,
+  "mean_output_tokens": 141.65,
+  "mean_new_tokens": 141.65,
+  "p95_new_tokens": 256,
+  "tok_per_sec": 7.6337,
+  "peak_vram": 14484569856,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 256,
+  "prompt_render_mode": "auto",
+  "repetition_penalty": 1.1,
+  "tokenizer_load_policy": {
+    "model_label": "Zephyr-7B-beta",
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior",
+    "config_patch_notes": []
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "</s>",
+      "tokenizer_pad_token_id": 2,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 2,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "</s>",
+      "tokenizer_pad_token_id": 2,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 2,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [],
+    "changed": false
+  }
+}

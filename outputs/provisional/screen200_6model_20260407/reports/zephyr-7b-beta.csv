@@ -1,0 +1,2 @@
+model_label,group,repo_id,registry_status,snapshot_path,stage,max_new_tokens,run_status,qualified_for_full_validation,runtime_success,format_ok,valid_parse,em,tm,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens,truncation_without_answer_rate,error
+Zephyr-7B-beta,main,HuggingFaceH4/zephyr-7b-beta,available_local,/Users/sam/.cache/huggingface/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c,screen,256,ok,no,1.0,0.43,0.095,0.01,0.02,18555.28,7.6337,14484569856,141.65,0.105,
