@@ -201,6 +201,7 @@
   },
   "active": "b87f297df1984a06",
   "lastOpenFiles": [
+    "README.md",
     "scripts/__pycache__/relaxed_scoring.cpython-311.pyc",
     "scripts/__pycache__/run_validation883_assigned_v1.cpython-313.pyc",
     "scripts/__pycache__/run_qualification_v1.cpython-313.pyc",
@@ -215,7 +216,6 @@
     "scripts/run_validation883_assigned_v1.py",
     "scripts/relaxed_scoring.py",
     "Claude suggestion/relaxed_scoring.py",
-    "Claude suggestion/FinBridge_阶段性实验简报.pdf",
     "Claude suggestion/FinBridge_Scoring_and_Report_Guide.md",
     "Claude suggestion/FinBridge_Experimental_Design.md",
     "outputs/provisional/screen200_6model_20260407/screen200_final_summary.md",
