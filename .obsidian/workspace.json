@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/项目总览.md",
+                "file": "docs/模型谱系与主表角色说明.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "项目总览"
+              "title": "模型谱系与主表角色说明"
             }
           }
         ]
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/项目总览.md",
+                "file": "docs/模型谱系与主表角色说明.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "项目总览 的反向链接列表"
+              "title": "模型谱系与主表角色说明 的反向链接列表"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/项目总览.md",
+                "file": "docs/模型谱系与主表角色说明.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "项目总览 的大纲"
+              "title": "模型谱系与主表角色说明 的大纲"
             }
           }
         ],
@@ -201,6 +201,10 @@
   },
   "active": "b87f297df1984a06",
   "lastOpenFiles": [
+    "docs/模型注册表.md",
+    "docs/数据重拉与字段核对.md",
+    "docs/当前状态.md",
+    "docs/项目总览.md",
     "README.md",
     "scripts/__pycache__/relaxed_scoring.cpython-311.pyc",
     "scripts/__pycache__/run_validation883_assigned_v1.cpython-313.pyc",
@@ -221,21 +225,17 @@
     "outputs/provisional/screen200_6model_20260407/screen200_final_summary.md",
     "outputs/provisional/calibration_table.6model_mainstream_20260407.md",
     "outputs/provisional/screen200_6model_20260407/screen200_status_table.md",
-    "docs/项目总览.md",
     "outputs/debug/protocol_screening_registry/all_attempted_models_summary.md",
     "docs/过程总结_主流Instruct预筛.md",
     "docs/过程总结_主表扩展与新增模型筛查.md",
     "docs/过程总结_输入包装修复.md",
-    "docs/模型注册表.md",
     "outputs/debug/input_smoke_mainstream/summary.md",
     "logs/2026-04-07_会话日志.md",
-    "docs/当前状态.md",
     "docs/任务笔记 - FinQA 基准重建.md",
     "docs/过程总结_新增候选失败类型分类.md",
     "docs/过程总结_orca_下一步决策.md",
     "docs/过程总结_协议可用性筛查.md",
     "outputs/debug/protocol_screening_registry/current_candidate_status_table.md",
-    "docs/异常与决策记录.md",
-    "Claude suggestion/诊断更新_2026-04-04.md"
+    "docs/异常与决策记录.md"
   ]
 }
