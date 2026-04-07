@@ -1,0 +1,30 @@
+{
+  "requested_prompt_mode": "registry",
+  "effective_wrapper": "chat_template",
+  "wrapper_family": "chat_template",
+  "has_assistant_generation_boundary": true,
+  "prompt_fallback_reason": "",
+  "rendered_prompt_head_500": "[gMASK]sop<|system|>\n You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value><|user|>\n ### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purcha",
+  "rendered_prompt_tail_300": " the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?<|assistant|>",
+  "tokenized_input_length": 542,
+  "raw_generation_text": "Answer: 17.8",
+  "answer_appears": true,
+  "valid_parse": true,
+  "truncation_suspect": false,
+  "repetition_collapse": false,
+  "parse_error_reason": null,
+  "answer_line_raw": "Answer: 17.8",
+  "parse": {
+    "format_ok": true,
+    "valid_parse": true,
+    "pred_value": 17.8,
+    "pred_unit_type": "plain",
+    "answer_line_raw": "Answer: 17.8",
+    "multiple_answer_lines": false,
+    "truncated_suspect": false,
+    "parse_error_reason": null
+  },
+  "new_tokens": 9,
+  "latency_ms": 2408.56,
+  "pass_smoke": true
+}

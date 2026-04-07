@@ -1,0 +1,11 @@
+# 主流预筛 Wrapper Registry：ChatGLM3-6B
+
+- group：`mainstream_instruction_prescreen`
+- model_family：`mainstream_chat`
+- method_family：`chat_posttrain`
+- base_model_family：`chatglm3`
+- wrapper family：`chat_template`
+- default wrapper：`chat_template`
+- allow chat_template：`True`
+- fallback wrapper：`plain`
+- notes：mainstream chat prescreen candidate; prefer official tokenizer chat_template, but runtime still needs trust_remote_code and may fall back to a non-standard generate path

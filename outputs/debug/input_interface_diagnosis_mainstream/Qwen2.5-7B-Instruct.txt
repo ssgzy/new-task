@@ -1,0 +1,47 @@
+# 主流预筛输入接口诊断：Qwen2.5-7B-Instruct
+
+- registry status：`available_or_downloaded`
+- group：`mainstream_instruction_prescreen`
+- model_family：`mainstream_instruction`
+- method_family：`instruction_posttrain`
+- base_model_family：`qwen2.5`
+- wrapper family：`chat_template`
+- default wrapper：`chat_template`
+- tokenizer class：`Qwen2Tokenizer`
+- tokenizer is_fast：`True`
+- tokenizer.chat_template：`True`
+- tokenizer pad/eos/bos/unk：`<|endoftext|>` / `<|im_end|>` / `None` / `None`
+- tokenizer pad/eos id：`151643` / `151645`
+- model config pad/eos id：`None` / `151645`
+- token id 对齐是否合理：`True`
+- model loader：`AutoModelForCausalLM` -> `Qwen2ForCausalLM`
+
+## Prompt Candidate：registry
+- effective mode：`chat_template`
+- generation boundary：`True`
+- fallback reason：``
+
+### rendered prompt head
+```text
+<|im_start|>system
+You are a precise financial question answering assistant.
+Use only the provided table and text.
+Do not show your reasoning.
+Do not explain.
+Output exactly one final line in this format:
+Answer: <numeric value><|im_end|>
+<|im_start|>user
+### Context
+### Pre Text
+repurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number o
+```
+
+### rendered prompt tail
+```text
+ was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .
+
+### Question
+how much more , in percent , was spent on october shares than november shares?<|im_end|>
+<|im_start|>assistant
+
+```

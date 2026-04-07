@@ -1,0 +1,11 @@
+# 主流预筛 Wrapper Registry：Qwen2.5-7B-Instruct
+
+- group：`mainstream_instruction_prescreen`
+- model_family：`mainstream_instruction`
+- method_family：`instruction_posttrain`
+- base_model_family：`qwen2.5`
+- wrapper family：`chat_template`
+- default wrapper：`chat_template`
+- allow chat_template：`True`
+- fallback wrapper：`plain`
+- notes：mainstream instruct prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it

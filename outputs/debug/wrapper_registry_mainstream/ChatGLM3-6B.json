@@ -1,0 +1,98 @@
+{
+  "model_label": "ChatGLM3-6B",
+  "group": "mainstream_instruction_prescreen",
+  "model_family": "mainstream_chat",
+  "method_family": "chat_posttrain",
+  "base_model_family": "chatglm3",
+  "repo_id": "THUDM/chatglm3-6b",
+  "registry_status": "available_or_downloaded",
+  "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--THUDM--chatglm3-6b/snapshots/e9e0406d062cdb887444fe5bd546833920abd4ac",
+  "wrapper_family": "chat_template",
+  "default_wrapper": "chat_template",
+  "allow_chat_template": true,
+  "fallback_wrapper": "plain",
+  "wrapper_notes": "mainstream chat prescreen candidate; prefer official tokenizer chat_template, but runtime still needs trust_remote_code and may fall back to a non-standard generate path",
+  "tokenizer_load_policy": {
+    "model_label": "ChatGLM3-6B",
+    "requested_use_fast": false,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "ChatGLMTokenizer",
+    "effective_tokenizer_is_fast": false,
+    "trust_remote_code": true,
+    "notes": "ChatGLM3 official loading path requires trust_remote_code=True; keep use_fast=False in the provisional prescreen path to stay close to the official AutoTokenizer/AutoModel examples.",
+    "config_patch_notes": [
+      "set tokenizer.batch_encode_plus = tokenizer.__call__ for ChatGLMTokenizer compatibility",
+      "set config.max_length = config.seq_length for ChatGLM3 compatibility",
+      "wrap ChatGLMForConditionalGeneration with GenerationMixin for Transformers compatibility",
+      "set ChatGLMForConditionalGeneration.all_tied_weights_keys = {} for Transformers compatibility"
+    ]
+  },
+  "tokenizer": {
+    "class_name": "ChatGLMTokenizer",
+    "is_fast": false,
+    "chat_template_exists": true,
+    "pad_token": "<unk>",
+    "pad_token_id": 0,
+    "eos_token": "</s>",
+    "eos_token_id": 2,
+    "bos_token": null,
+    "bos_token_id": null,
+    "unk_token": "<unk>",
+    "unk_token_id": 0,
+    "special_tokens_map": {
+      "eos_token": "</s>",
+      "unk_token": "<unk>",
+      "pad_token": "<unk>"
+    }
+  },
+  "model_config": {
+    "model_type": "chatglm",
+    "pad_token_id": 0,
+    "eos_token_id": 2,
+    "bos_token_id": null,
+    "token_id_alignment_reasonable": true
+  },
+  "model_loader": {
+    "loader_name": "dynamic_module.ChatGLMCompatForConditionalGeneration",
+    "effective_model_class_name": "ChatGLMCompatForConditionalGeneration",
+    "config_patch_notes": [
+      "set tokenizer.batch_encode_plus = tokenizer.__call__ for ChatGLMTokenizer compatibility",
+      "set config.max_length = config.seq_length for ChatGLM3 compatibility",
+      "wrap ChatGLMForConditionalGeneration with GenerationMixin for Transformers compatibility",
+      "set ChatGLMForConditionalGeneration.all_tied_weights_keys = {} for Transformers compatibility"
+    ]
+  },
+  "prompt_candidates": [
+    {
+      "requested_prompt_mode": "registry",
+      "resolved_mode": "chat_template",
+      "effective_mode": "chat_template",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": true,
+      "rendered_prompt_head_500": "[gMASK]sop<|system|>\n You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value><|user|>\n ### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purcha",
+      "rendered_prompt_tail_300": " the withheld shares was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?<|assistant|>"
+    }
+  ],
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [],
+    "changed": false
+  },
+  "skip_reason": "",
+  "runtime_error": ""
+}

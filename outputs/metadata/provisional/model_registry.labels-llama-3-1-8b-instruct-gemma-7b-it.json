@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Llama-3.1-8B-Instruct",
+    "group": "mainstream_instruction_prescreen",
+    "model_family": "mainstream_instruction",
+    "method_family": "rlhf",
+    "base_model_family": "llama3.1",
+    "notes": "official mainstream instruct prescreen candidate; repo is gated on Hugging Face and may fail download without accepted license access",
+    "repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "status": "download_failed",
+    "snapshot_path": "",
+    "resolved_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "num_siblings": 17,
+    "error": "GatedRepoError: 401 Client Error. (Request ID: Root=1-69d3e090-4e86634a786aa3f9021a759a;c8e6bed4-e6f9-4f27-b0a4-626b581d77d7)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/0e9e39f249a16976918f6564b8830bc894c89659/config.json.\nAccess to model meta-llama/Llama-3.1-8B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in."
+  },
+  {
+    "label": "Gemma-7B-IT",
+    "group": "mainstream_instruction_prescreen",
+    "model_family": "mainstream_instruction",
+    "method_family": "instruction_tuned",
+    "base_model_family": "gemma",
+    "notes": "official mainstream instruct prescreen candidate; repo is gated on Hugging Face and may fail download without accepted license access",
+    "repo_id": "google/gemma-7b-it",
+    "status": "download_failed",
+    "snapshot_path": "",
+    "resolved_revision": "9c5798d27f588501ce1e108079d2a19e4c3a2353",
+    "num_siblings": 14,
+    "error": "GatedRepoError: 401 Client Error. (Request ID: Root=1-69d3e091-6b57ebe842971a331679efbe;9279e9b0-5fd5-4779-ba65-839b8e5dfba4)\n\nCannot access gated repo for url https://huggingface.co/google/gemma-7b-it/resolve/9c5798d27f588501ce1e108079d2a19e4c3a2353/config.json.\nAccess to model google/gemma-7b-it is restricted. You must have access to it and be authenticated to access it. Please log in."
+  }
+]

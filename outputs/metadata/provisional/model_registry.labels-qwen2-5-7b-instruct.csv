@@ -1,0 +1,2 @@
+label,group,model_family,method_family,base_model_family,repo_id,status,snapshot_path,resolved_revision,num_siblings,error,notes
+Qwen2.5-7B-Instruct,mainstream_instruction_prescreen,mainstream_instruction,instruction_posttrain,qwen2.5,Qwen/Qwen2.5-7B-Instruct,available_or_downloaded,/Users/sam/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28,a09a35458c702b33eeacc393d103063234e8bc28,14,,official mainstream instruct prescreen candidate; prefer tokenizer chat_template path in provisional smoke

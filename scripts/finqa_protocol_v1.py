@@ -39,6 +39,7 @@ PROMPT_RENDER_MODE_COMPLETION = "completion"
 MODEL_FAMILY_ALPACA = "alpaca"
 MODEL_FAMILY_VICUNA = "vicuna"
 MODEL_FAMILY_CHATML = "chatml"
+MODEL_FAMILY_CHAT_TEMPLATE = "chat_template"
 MODEL_FAMILY_PLAIN = "plain"
 MODEL_FAMILY_BASE_DISTILLED = "base_distilled"
 
@@ -139,6 +140,54 @@ INSTRUCTION_WRAPPER_REGISTRY: Dict[str, InstructionWrapperSpec] = {
         fallback_wrapper=PROMPT_RENDER_MODE_CHATML,
         notes="main-table expansion candidate; local tokenizer has no chat_template, so compare ChatML versus plain in provisional smoke before freezing a wrapper",
     ),
+    "Mistral-7B-Instruct-v0.3": InstructionWrapperSpec(
+        model_label="Mistral-7B-Instruct-v0.3",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream instruct prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+    ),
+    "Qwen2.5-7B-Instruct": InstructionWrapperSpec(
+        model_label="Qwen2.5-7B-Instruct",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream instruct prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+    ),
+    "Llama-3.1-8B-Instruct": InstructionWrapperSpec(
+        model_label="Llama-3.1-8B-Instruct",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream instruct prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+    ),
+    "Gemma-7B-IT": InstructionWrapperSpec(
+        model_label="Gemma-7B-IT",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream instruct prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+    ),
+    "Yi-1.5-6B-Chat": InstructionWrapperSpec(
+        model_label="Yi-1.5-6B-Chat",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream chat prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+    ),
+    "ChatGLM3-6B": InstructionWrapperSpec(
+        model_label="ChatGLM3-6B",
+        model_family=MODEL_FAMILY_CHAT_TEMPLATE,
+        default_wrapper=PROMPT_RENDER_MODE_CHAT_TEMPLATE,
+        allow_chat_template=True,
+        fallback_wrapper=PROMPT_RENDER_MODE_PLAIN,
+        notes="mainstream chat prescreen candidate; prefer official tokenizer chat_template, but runtime still needs trust_remote_code and may fall back to a non-standard generate path",
+    ),
 }
 
 SUPPORTED_PROMPT_RENDER_MODES = {
@@ -159,6 +208,13 @@ TOKENIZER_LOAD_POLICIES: Dict[str, TokenizerLoadPolicy] = {
         tokenizer_class_name="LlamaTokenizer",
         trust_remote_code=False,
         notes="Official Orca-2-7b model card asks to use the slow tokenizer; in this local Transformers stack, AutoTokenizer(..., use_fast=False) still resolves to TokenizersBackend, so Orca is loaded with LlamaTokenizer.from_pretrained for the debug/provisional path.",
+    ),
+    "ChatGLM3-6B": TokenizerLoadPolicy(
+        model_label="ChatGLM3-6B",
+        use_fast=False,
+        tokenizer_class_name="AutoTokenizer",
+        trust_remote_code=True,
+        notes="ChatGLM3 official loading path requires trust_remote_code=True; keep use_fast=False in the provisional prescreen path to stay close to the official AutoTokenizer/AutoModel examples.",
     ),
 }
 

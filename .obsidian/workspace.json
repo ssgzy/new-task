@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2693170e1effca97",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/模型注册表.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "模型注册表"
-            }
-          },
-          {
             "id": "168eecc6d28afac0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/过程总结_输入包装修复.md",
+                "file": "outputs/provisional/calibration_table.6model_mainstream_20260407.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "过程总结_输入包装修复"
+              "title": "calibration_table.6model_mainstream_20260407"
             }
           }
         ]
@@ -108,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/模型注册表.md",
+                "file": "outputs/provisional/calibration_table.6model_mainstream_20260407.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -118,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "模型注册表 的反向链接列表"
+              "title": "calibration_table.6model_mainstream_20260407 的反向链接列表"
             }
           },
           {
@@ -170,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/模型注册表.md",
+                "file": "outputs/provisional/calibration_table.6model_mainstream_20260407.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "模型注册表 的大纲"
+              "title": "calibration_table.6model_mainstream_20260407 的大纲"
             }
           }
         ],
@@ -184,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 271.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,26 +183,35 @@
       "bases:新建数据库": false
     }
   },
-  "active": "2693170e1effca97",
+  "active": "168eecc6d28afac0",
   "lastOpenFiles": [
+    "outputs/provisional/screen200_6model_20260407/screen/Zephyr-7B-beta/predictions.jsonl",
+    "outputs/provisional/screen200_6model_20260407/screen/Zephyr-7B-beta",
+    "outputs/provisional/archive/zephyr-screen200-partial-20260407/Zephyr-7B-beta/predictions.jsonl",
+    "outputs/provisional/archive/zephyr-screen200-partial-20260407/Zephyr-7B-beta",
+    "outputs/provisional/archive/zephyr-screen200-partial-20260407",
+    "outputs/provisional/screen200_6model_20260407/reports/orca-2-7b.csv",
+    "outputs/provisional/screen200_6model_20260407/screen/Orca-2-7B/summary.json",
+    "outputs/provisional/screen200_6model_20260407/screen/Orca-2-7B/predictions.jsonl",
+    "outputs/provisional/screen200_6model_20260407/screen/Orca-2-7B",
+    "outputs/provisional/screen200_6model_20260407/screen",
+    "outputs/provisional/screen200_6model_20260407/screen200_status_table.md",
+    "outputs/provisional/screen200_6model_20260407/screen200_status_table.json",
+    "docs/项目总览.md",
+    "outputs/provisional/calibration_table.6model_mainstream_20260407.md",
+    "outputs/debug/protocol_screening_registry/all_attempted_models_summary.md",
+    "docs/过程总结_主流Instruct预筛.md",
+    "docs/过程总结_主表扩展与新增模型筛查.md",
+    "docs/过程总结_输入包装修复.md",
+    "docs/模型注册表.md",
+    "outputs/debug/input_smoke_mainstream/summary.md",
+    "logs/2026-04-07_会话日志.md",
     "docs/当前状态.md",
     "docs/任务笔记 - FinQA 基准重建.md",
     "docs/过程总结_新增候选失败类型分类.md",
     "docs/过程总结_orca_下一步决策.md",
     "docs/过程总结_协议可用性筛查.md",
     "outputs/debug/protocol_screening_registry/current_candidate_status_table.md",
-    "outputs/debug/protocol_screening_registry/current_candidate_status_table.json",
-    "outputs/debug/protocol_screening_registry",
-    "outputs/debug/input_smoke_expansion/Xwin-LM-7B/raw_generation_registry.txt",
-    "outputs/debug/input_smoke_expansion/Xwin-LM-7B/smoke_registry.json",
-    "outputs/metadata/provisional/model_registry.labels-xwin-lm-7b.csv",
-    "outputs/metadata/provisional/model_registry.labels-xwin-lm-7b.json",
-    "outputs/provisional/calibration_report.labels-orca-2-7b.provisional.csv",
-    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256/summary.json",
-    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256/predictions.jsonl",
-    "outputs/calibration_runs/Orca-2-7B/max_new_tokens_256",
-    "docs/过程总结_输入包装修复.md",
-    "docs/过程总结_主表扩展与新增模型筛查.md",
     "docs/异常与决策记录.md",
     "Claude suggestion/诊断更新_2026-04-04.md",
     "docs/输入接口诊断.md",
@@ -224,8 +219,6 @@
     "logs/2026-04-04_会话日志.md",
     "logs/2026-04-03_会话日志.md",
     "docs/Claude建议核查.md",
-    "docs/组员运行说明.md",
-    "docs/项目总览.md",
-    "docs/模型注册表.md"
+    "docs/组员运行说明.md"
   ]
 }

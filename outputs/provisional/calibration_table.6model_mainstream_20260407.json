@@ -1,0 +1,20 @@
+[
+  {"model":"Orca-2-7B","tier":128,"status":"completed","rows":50,"format_ok_rate":0.8,"valid_parse_rate":0.72,"truncation_without_answer_rate":0.18,"note":"final_summary"},
+  {"model":"Orca-2-7B","tier":192,"status":"completed","rows":50,"format_ok_rate":0.86,"valid_parse_rate":0.78,"truncation_without_answer_rate":0.1,"note":"final_summary"},
+  {"model":"Orca-2-7B","tier":256,"status":"completed","rows":50,"format_ok_rate":0.86,"valid_parse_rate":0.78,"truncation_without_answer_rate":0.1,"note":"final_summary"},
+  {"model":"Zephyr-7B-beta","tier":128,"status":"completed","rows":50,"format_ok_rate":0.46,"valid_parse_rate":0.08,"truncation_without_answer_rate":0.32,"note":"final_summary"},
+  {"model":"Zephyr-7B-beta","tier":192,"status":"completed","rows":50,"format_ok_rate":0.56,"valid_parse_rate":0.12,"truncation_without_answer_rate":0.14,"note":"final_summary"},
+  {"model":"Zephyr-7B-beta","tier":256,"status":"completed","rows":50,"format_ok_rate":0.56,"valid_parse_rate":0.12,"truncation_without_answer_rate":0.06,"note":"final_summary"},
+  {"model":"Qwen2.5-7B-Instruct","tier":128,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.96,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Qwen2.5-7B-Instruct","tier":192,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.96,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Qwen2.5-7B-Instruct","tier":256,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.96,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Mistral-7B-Instruct-v0.3","tier":128,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Mistral-7B-Instruct-v0.3","tier":192,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Mistral-7B-Instruct-v0.3","tier":256,"status":"completed","rows":50,"format_ok_rate":1.0,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.0,"note":"final_summary"},
+  {"model":"Yi-1.5-6B-Chat","tier":128,"status":"completed","rows":50,"format_ok_rate":0.9,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.02,"note":"final_summary"},
+  {"model":"Yi-1.5-6B-Chat","tier":192,"status":"completed","rows":50,"format_ok_rate":0.9,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.02,"note":"final_summary"},
+  {"model":"Yi-1.5-6B-Chat","tier":256,"status":"completed","rows":50,"format_ok_rate":0.9,"valid_parse_rate":0.74,"truncation_without_answer_rate":0.02,"note":"final_summary"},
+  {"model":"ChatGLM3-6B","tier":128,"status":"completed","rows":50,"format_ok_rate":0.52,"valid_parse_rate":0.34,"truncation_without_answer_rate":0.46,"note":"rerun_completed_predictions_and_summary_consistent"},
+  {"model":"ChatGLM3-6B","tier":192,"status":"completed","rows":50,"format_ok_rate":0.9,"valid_parse_rate":0.62,"truncation_without_answer_rate":0.04,"note":"final_summary"},
+  {"model":"ChatGLM3-6B","tier":256,"status":"completed","rows":50,"format_ok_rate":0.9,"valid_parse_rate":0.62,"truncation_without_answer_rate":0.04,"note":"final_summary"}
+]

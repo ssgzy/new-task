@@ -1,0 +1,60 @@
+{
+  "model_label": "ChatGLM3-6B",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--THUDM--chatglm3-6b/snapshots/e9e0406d062cdb887444fe5bd546833920abd4ac",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_calib50.jsonl",
+  "num_examples": 1,
+  "runtime_success": 1.0,
+  "format_ok": 1.0,
+  "valid_parse": 1.0,
+  "em": 0.0,
+  "tm": 0.0,
+  "truncation_without_answer_rate": 0.0,
+  "answer_present_rate": 1.0,
+  "valid_parse_rate": 1.0,
+  "avg_latency_ms": 2828.35,
+  "mean_output_tokens": 9.0,
+  "mean_new_tokens": 9.0,
+  "p95_new_tokens": 9,
+  "tok_per_sec": 3.1821,
+  "peak_vram": 12523731456,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 128,
+  "prompt_render_mode": "auto",
+  "repetition_penalty": 1.1,
+  "tokenizer_load_policy": {
+    "model_label": "ChatGLM3-6B",
+    "requested_use_fast": false,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "ChatGLMTokenizer",
+    "effective_tokenizer_is_fast": false,
+    "trust_remote_code": true,
+    "notes": "ChatGLM3 official loading path requires trust_remote_code=True; keep use_fast=False in the provisional prescreen path to stay close to the official AutoTokenizer/AutoModel examples.",
+    "config_patch_notes": [
+      "set tokenizer.batch_encode_plus = tokenizer.__call__ for ChatGLMTokenizer compatibility",
+      "set config.max_length = config.seq_length for ChatGLM3 compatibility",
+      "wrap ChatGLMForConditionalGeneration with GenerationMixin for Transformers compatibility",
+      "set ChatGLMForConditionalGeneration.all_tied_weights_keys = {} for Transformers compatibility"
+    ]
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "</s>",
+      "tokenizer_eos_token_id": 2,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "actions": [],
+    "changed": false
+  }
+}

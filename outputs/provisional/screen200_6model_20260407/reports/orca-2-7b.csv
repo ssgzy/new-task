@@ -1,0 +1,2 @@
+model_label,group,repo_id,registry_status,snapshot_path,stage,max_new_tokens,run_status,qualified_for_full_validation,runtime_success,format_ok,valid_parse,em,tm,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens,truncation_without_answer_rate,error
+Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,screen,256,ok,yes,1.0,0.96,0.845,0.03,0.075,6277.1,3.7756,13478032384,23.7,0.025,

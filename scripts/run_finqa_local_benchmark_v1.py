@@ -11,7 +11,10 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
 import torch
-from transformers import AutoModelForCausalLM
+from transformers import AutoConfig, AutoModel, AutoModelForCausalLM
+from transformers.dynamic_module_utils import get_class_from_dynamic_module
+from transformers.generation.logits_process import RepetitionPenaltyLogitsProcessor
+from transformers.generation.utils import GenerationConfig, GenerationMixin
 
 from finqa_protocol_v1 import (
     PROMPT_RENDER_MODE_AUTO,
@@ -135,6 +138,27 @@ def current_memory_bytes(device: str) -> Optional[int]:
     return None
 
 
+def update_chatglm_generation_kwargs(outputs: Any, model_kwargs: Dict[str, Any]) -> Dict[str, Any]:
+    updated = dict(model_kwargs)
+    updated["past_key_values"] = getattr(outputs, "past_key_values", None)
+
+    attention_mask = updated.get("attention_mask")
+    if attention_mask is not None:
+        updated["attention_mask"] = torch.cat(
+            [attention_mask, attention_mask.new_ones((attention_mask.shape[0], 1))],
+            dim=-1,
+        )
+
+    position_ids = updated.get("position_ids")
+    if position_ids is not None:
+        new_position_id = position_ids[..., -1:].clone()
+        new_position_id += 1
+        updated["position_ids"] = torch.cat([position_ids, new_position_id], dim=-1)
+
+    updated["is_first_forward"] = False
+    return updated
+
+
 def load_model_and_tokenizer(
     model_label: str,
     model_path: str,
@@ -146,16 +170,62 @@ def load_model_and_tokenizer(
         model_label=model_label,
         trust_remote_code=trust_remote_code,
     )
+    effective_trust_remote_code = tokenizer_load_policy.trust_remote_code
     tokenizer = load_tokenizer_with_policy(
         model_path=model_path,
         model_label=model_label,
-        trust_remote_code=trust_remote_code,
+        trust_remote_code=effective_trust_remote_code,
     )
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        torch_dtype=dtype,
-        trust_remote_code=trust_remote_code,
-    )
+    config = AutoConfig.from_pretrained(model_path, trust_remote_code=effective_trust_remote_code)
+    config_patch_notes: List[str] = []
+
+    if model_label == "ChatGLM3-6B" and not hasattr(tokenizer, "batch_encode_plus"):
+        tokenizer.batch_encode_plus = tokenizer.__call__
+        config_patch_notes.append("set tokenizer.batch_encode_plus = tokenizer.__call__ for ChatGLMTokenizer compatibility")
+    if model_label == "ChatGLM3-6B" and not hasattr(config, "max_length") and hasattr(config, "seq_length"):
+        config.max_length = config.seq_length
+        config_patch_notes.append("set config.max_length = config.seq_length for ChatGLM3 compatibility")
+
+    if model_label == "ChatGLM3-6B" and effective_trust_remote_code:
+        model_cls = get_class_from_dynamic_module(
+            "modeling_chatglm.ChatGLMForConditionalGeneration",
+            model_path,
+        )
+        compat_model_cls = model_cls
+        if not issubclass(model_cls, GenerationMixin):
+            compat_model_cls = type(
+                "ChatGLMCompatForConditionalGeneration",
+                (model_cls, GenerationMixin),
+                {},
+            )
+            config_patch_notes.append("wrap ChatGLMForConditionalGeneration with GenerationMixin for Transformers compatibility")
+        if not hasattr(compat_model_cls, "all_tied_weights_keys"):
+            compat_model_cls.all_tied_weights_keys = {}
+            config_patch_notes.append("set ChatGLMForConditionalGeneration.all_tied_weights_keys = {} for Transformers compatibility")
+        model = compat_model_cls.from_pretrained(
+            model_path,
+            config=config,
+            torch_dtype=dtype,
+            trust_remote_code=effective_trust_remote_code,
+        )
+        if not hasattr(model, "generation_config") or model.generation_config is None:
+            model.generation_config = GenerationConfig.from_model_config(config)
+            config_patch_notes.append("set model.generation_config = GenerationConfig.from_model_config(config)")
+    else:
+        try:
+            model = AutoModelForCausalLM.from_pretrained(
+                model_path,
+                config=config,
+                torch_dtype=dtype,
+                trust_remote_code=effective_trust_remote_code,
+            )
+        except Exception:
+            model = AutoModel.from_pretrained(
+                model_path,
+                config=config,
+                torch_dtype=dtype,
+                trust_remote_code=effective_trust_remote_code,
+            )
     special_token_alignment = align_model_tokenizer_special_tokens(model=model, tokenizer=tokenizer)
     model.eval()
     model.to(device)
@@ -165,8 +235,9 @@ def load_model_and_tokenizer(
         "requested_tokenizer_class_name": tokenizer_load_policy.tokenizer_class_name,
         "effective_tokenizer_class_name": type(tokenizer).__name__,
         "effective_tokenizer_is_fast": getattr(tokenizer, "is_fast", None),
-        "trust_remote_code": tokenizer_load_policy.trust_remote_code,
+        "trust_remote_code": effective_trust_remote_code,
         "notes": tokenizer_load_policy.notes,
+        "config_patch_notes": config_patch_notes,
     }
     return model, tokenizer, tokenizer_policy_summary, special_token_alignment
 
@@ -304,30 +375,96 @@ def main() -> None:
         }
 
         try:
-            start = time.perf_counter()
-            with torch.inference_mode():
-                generated = model.generate(
-                    **prompt_inputs,
-                    max_new_tokens=args.max_new_tokens,
-                    do_sample=False if args.temperature == 0 else True,
-                    temperature=args.temperature,
-                    top_p=args.top_p,
-                    repetition_penalty=args.repetition_penalty,
-                    pad_token_id=tokenizer.pad_token_id,
-                    eos_token_id=tokenizer.eos_token_id,
+            if (
+                args.model_label == "ChatGLM3-6B"
+                and hasattr(tokenizer, "build_chat_input")
+                and hasattr(model, "prepare_inputs_for_generation")
+            ):
+                messages = prompt_info["messages"]
+                history = [message for message in messages[:-1]]
+                query = messages[-1]["content"]
+                prompt_inputs = tokenizer.build_chat_input(query, history=history, role="user")
+                prompt_inputs = {key: value.to(device) for key, value in prompt_inputs.items()}
+                prompt_length = int(prompt_inputs["input_ids"].shape[-1])
+                row["prompt_length_tokens"] = prompt_length
+
+                generated = prompt_inputs["input_ids"]
+                model_kwargs = {
+                    "past_key_values": None,
+                    "attention_mask": prompt_inputs.get("attention_mask"),
+                    "position_ids": model.get_position_ids(generated, device=generated.device),
+                    "use_cache": True,
+                    "is_first_forward": True,
+                }
+                eos_token_ids = {
+                    tokenizer.eos_token_id,
+                    tokenizer.get_command("<|user|>"),
+                    tokenizer.get_command("<|observation|>"),
+                }
+                repetition_processor = RepetitionPenaltyLogitsProcessor(args.repetition_penalty)
+
+                start = time.perf_counter()
+                with torch.inference_mode():
+                    for _ in range(args.max_new_tokens):
+                        model_inputs = model.prepare_inputs_for_generation(generated, **model_kwargs)
+                        outputs = model(
+                            **model_inputs,
+                            return_dict=True,
+                            output_attentions=False,
+                            output_hidden_states=False,
+                        )
+                        next_token_scores = outputs.logits[:, -1, :]
+                        next_token_scores = repetition_processor(generated, next_token_scores)
+                        next_tokens = torch.argmax(next_token_scores, dim=-1)
+                        generated = torch.cat([generated, next_tokens[:, None]], dim=-1)
+                        model_kwargs = update_chatglm_generation_kwargs(outputs, model_kwargs)
+                        if int(next_tokens[0].item()) in eos_token_ids:
+                            break
+                latency_ms = (time.perf_counter() - start) * 1000.0
+                generated_ids = generated[0, prompt_length:]
+                generated_ids_list = generated_ids.tolist()
+                if generated_ids_list and generated_ids_list[-1] in eos_token_ids:
+                    generated_ids_list = generated_ids_list[:-1]
+                prediction_text_raw = tokenizer.decode(generated_ids_list)
+                history_for_process = [dict(item) for item in history]
+                history_for_process.append({"role": "user", "content": query})
+                processed_response, _processed_history = model.process_response(
+                    prediction_text_raw,
+                    history_for_process,
                 )
-            latency_ms = (time.perf_counter() - start) * 1000.0
-            generated_ids = generated[0, prompt_length:]
-            prediction_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
+                prediction_text = (
+                    processed_response
+                    if isinstance(processed_response, str)
+                    else json.dumps(processed_response, ensure_ascii=False)
+                )
+                new_tokens = len(generated_ids_list)
+            else:
+                start = time.perf_counter()
+                with torch.inference_mode():
+                    generated = model.generate(
+                        **prompt_inputs,
+                        max_new_tokens=args.max_new_tokens,
+                        do_sample=False if args.temperature == 0 else True,
+                        temperature=args.temperature,
+                        top_p=args.top_p,
+                        repetition_penalty=args.repetition_penalty,
+                        pad_token_id=tokenizer.pad_token_id,
+                        eos_token_id=tokenizer.eos_token_id,
+                    )
+                latency_ms = (time.perf_counter() - start) * 1000.0
+                generated_ids = generated[0, prompt_length:]
+                prediction_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
+                new_tokens = int(generated_ids.shape[-1])
+
             parse = parse_prediction(
                 prediction_text,
-                max_new_tokens_hit=int(generated_ids.shape[-1]) >= args.max_new_tokens,
+                max_new_tokens_hit=new_tokens >= args.max_new_tokens,
             )
             pred_value = parse["pred_value"]
 
             row["runtime_success"] = True
             row["latency_ms"] = round(latency_ms, 2)
-            row["new_tokens"] = int(generated_ids.shape[-1])
+            row["new_tokens"] = new_tokens
             row["peak_vram_bytes"] = current_memory_bytes(device)
             row["prediction_text"] = prediction_text
             row["parse"] = parse

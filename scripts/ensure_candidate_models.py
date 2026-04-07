@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any, Dict, List
@@ -72,6 +73,60 @@ CANDIDATE_MODELS = [
         "model_family": "long_reasoning_distill",
         "repo_id": "open-r1/OpenR1-Distill-7B",
         "notes": "new expansion candidate; reasoning-oriented Qwen2 model, first pass compares ChatML/plain wrappers without changing parser v1",
+    },
+    {
+        "label": "Mistral-7B-Instruct-v0.3",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_instruction",
+        "method_family": "instruction_sft",
+        "base_model_family": "mistral",
+        "repo_id": "mistralai/Mistral-7B-Instruct-v0.3",
+        "notes": "official mainstream instruct prescreen candidate; prefer tokenizer chat_template path in provisional smoke",
+    },
+    {
+        "label": "Qwen2.5-7B-Instruct",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_instruction",
+        "method_family": "instruction_posttrain",
+        "base_model_family": "qwen2.5",
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "notes": "official mainstream instruct prescreen candidate; prefer tokenizer chat_template path in provisional smoke",
+    },
+    {
+        "label": "Llama-3.1-8B-Instruct",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_instruction",
+        "method_family": "rlhf",
+        "base_model_family": "llama3.1",
+        "repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "notes": "official mainstream instruct prescreen candidate; repo is gated on Hugging Face and may fail download without accepted license access",
+    },
+    {
+        "label": "Gemma-7B-IT",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_instruction",
+        "method_family": "instruction_tuned",
+        "base_model_family": "gemma",
+        "repo_id": "google/gemma-7b-it",
+        "notes": "official mainstream instruct prescreen candidate; repo is gated on Hugging Face and may fail download without accepted license access",
+    },
+    {
+        "label": "Yi-1.5-6B-Chat",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_chat",
+        "method_family": "chat_sft",
+        "base_model_family": "yi",
+        "repo_id": "01-ai/Yi-1.5-6B-Chat",
+        "notes": "official mainstream chat prescreen candidate; prefer tokenizer chat_template path in provisional smoke",
+    },
+    {
+        "label": "ChatGLM3-6B",
+        "group": "mainstream_instruction_prescreen",
+        "model_family": "mainstream_chat",
+        "method_family": "chat_posttrain",
+        "base_model_family": "chatglm3",
+        "repo_id": "THUDM/chatglm3-6b",
+        "notes": "official mainstream chat prescreen candidate; runtime likely requires trust_remote_code=True and may not follow the standard AutoModelForCausalLM path",
     },
 ]
 
@@ -225,10 +280,22 @@ def resolve_local_snapshot(repo_id: str) -> Dict[str, Any]:
     row["num_siblings"] = sum(1 for path in latest_snapshot.rglob("*") if path.is_file())
 
     incomplete_blobs = sorted(repo_cache_dir.glob("blobs/*.incomplete"))
-    if incomplete_blobs:
+    incomplete_blob_names = {blob.name.removesuffix(".incomplete") for blob in incomplete_blobs}
+    referenced_blob_names: set[str] = set()
+    for path in latest_snapshot.rglob("*"):
+        if not path.is_symlink():
+            continue
+        target_name = Path(os.readlink(path)).name
+        if target_name:
+            referenced_blob_names.add(target_name)
+
+    referenced_incomplete_blobs = sorted(
+        blob for blob in incomplete_blobs if blob.name.removesuffix(".incomplete") in referenced_blob_names
+    )
+    if referenced_incomplete_blobs:
         row["status"] = "incomplete_local_snapshot"
         row["error"] = (
-            f"Found {len(incomplete_blobs)} partial blob(s) under {repo_cache_dir / 'blobs'}; "
+            f"Found {len(referenced_incomplete_blobs)} referenced partial blob(s) under {repo_cache_dir / 'blobs'}; "
             "skip smoke until download resumes on a non-hotspot network"
         )
         return row
@@ -258,11 +325,19 @@ def resolve_snapshot(model: Dict[str, Any], download_missing: bool, local_only: 
         return row
 
     api = HfApi()
+    ignore_patterns: List[str] = []
 
     try:
         info = api.model_info(repo_id)
         row["resolved_revision"] = info.sha or ""
         row["num_siblings"] = len(info.siblings)
+        sibling_names = [sibling.rfilename for sibling in info.siblings]
+        has_sharded_safetensors = any(
+            re.match(r"model-\d{5}-of-\d{5}\.safetensors$", Path(name).name)
+            for name in sibling_names
+        )
+        if has_sharded_safetensors and "consolidated.safetensors" in sibling_names:
+            ignore_patterns.append("consolidated.safetensors")
     except Exception as exc:  # pragma: no cover - network dependent
         row["status"] = "repo_lookup_failed"
         row["error"] = f"{type(exc).__name__}: {exc}"
@@ -272,10 +347,13 @@ def resolve_snapshot(model: Dict[str, Any], download_missing: bool, local_only: 
         snapshot_path = snapshot_download(
             repo_id=repo_id,
             allow_patterns=ALLOW_PATTERNS,
+            ignore_patterns=ignore_patterns,
             local_files_only=not download_missing,
         )
         row["status"] = "available_local" if not download_missing else "available_or_downloaded"
         row["snapshot_path"] = snapshot_path
+        if ignore_patterns:
+            row["error"] = "ignored_duplicate_artifacts=" + ",".join(ignore_patterns)
         return row
     except Exception as exc:
         if not download_missing:
@@ -310,6 +388,8 @@ def main() -> None:
                 "label": model["label"],
                 "group": model["group"],
                 "model_family": model.get("model_family", ""),
+                "method_family": model.get("method_family", ""),
+                "base_model_family": model.get("base_model_family", ""),
                 "notes": model.get("notes", ""),
                 **resolved,
             }
@@ -323,6 +403,8 @@ def main() -> None:
             "label",
             "group",
             "model_family",
+            "method_family",
+            "base_model_family",
             "repo_id",
             "status",
             "snapshot_path",

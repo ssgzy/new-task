@@ -1,0 +1,2 @@
+label,group,model_family,method_family,base_model_family,repo_id,status,snapshot_path,resolved_revision,num_siblings,error,notes
+Yi-1.5-6B-Chat,mainstream_instruction_prescreen,mainstream_chat,chat_sft,yi,01-ai/Yi-1.5-6B-Chat,available_or_downloaded,/Users/sam/.cache/huggingface/hub/models--01-ai--Yi-1.5-6B-Chat/snapshots/771924d1c83d67527d665913415d7086f11ea9c0,771924d1c83d67527d665913415d7086f11ea9c0,14,,official mainstream chat prescreen candidate; prefer tokenizer chat_template path in provisional smoke

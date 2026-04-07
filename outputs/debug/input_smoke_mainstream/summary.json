@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-04-07 09:54:15",
+  "sample_index": 0,
+  "max_new_tokens": 128,
+  "repetition_penalty": 1.1,
+  "rows": [
+    {
+      "model_label": "ChatGLM3-6B",
+      "status": "ok",
+      "effective_wrapper": "chat_template",
+      "effective_tokenizer_class_name": "ChatGLMTokenizer",
+      "answer_appears": true,
+      "valid_parse": true,
+      "truncation_suspect": false,
+      "repetition_collapse": false,
+      "pass_smoke": true,
+      "note": null
+    }
+  ],
+  "passed_labels": [
+    "ChatGLM3-6B"
+  ]
+}

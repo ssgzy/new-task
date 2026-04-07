@@ -1,0 +1,57 @@
+{
+  "model_label": "Qwen2.5-7B-Instruct",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/val_calib50.jsonl",
+  "num_examples": 50,
+  "runtime_success": 1.0,
+  "format_ok": 1.0,
+  "valid_parse": 0.96,
+  "em": 0.28,
+  "tm": 0.32,
+  "truncation_without_answer_rate": 0.0,
+  "answer_present_rate": 1.0,
+  "valid_parse_rate": 0.96,
+  "avg_latency_ms": 3254.68,
+  "mean_output_tokens": 8.56,
+  "mean_new_tokens": 8.56,
+  "p95_new_tokens": 11,
+  "tok_per_sec": 2.6301,
+  "peak_vram": 15231981568,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 128,
+  "prompt_render_mode": "auto",
+  "repetition_penalty": 1.1,
+  "tokenizer_load_policy": {
+    "model_label": "Qwen2.5-7B-Instruct",
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "Qwen2Tokenizer",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior",
+    "config_patch_notes": []
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<|endoftext|>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 151645,
+      "model_config_pad_token_id": null,
+      "model_config_eos_token_id": 151645
+    },
+    "after": {
+      "tokenizer_pad_token": "<|endoftext|>",
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 151645,
+      "model_config_pad_token_id": 151643,
+      "model_config_eos_token_id": 151645
+    },
+    "actions": [
+      "set model.config.pad_token_id = tokenizer.pad_token_id"
+    ],
+    "changed": true
+  }
+}

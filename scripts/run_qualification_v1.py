@@ -15,9 +15,9 @@ from typing import Any, Dict, List
 
 THRESHOLDS = {
     "runtime_success": 0.95,
-    "format_ok": 0.70,
-    "valid_parse": 0.70,
-    "truncation_without_answer_rate": 0.05,
+    "format_ok": 0.80,
+    "valid_parse": 0.60,
+    "truncation_without_answer_rate": 0.10,
 }
 
 
@@ -49,6 +49,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path(__file__).resolve().parents[1] / "outputs" / "qualification_summary.csv",
     )
+    parser.add_argument(
+        "--run-root",
+        type=Path,
+        default=None,
+        help="Optional root directory for per-model qualification runs. Defaults to outputs/qualification_runs.",
+    )
     parser.add_argument("--max-new-tokens", type=int, default=256)
     parser.add_argument(
         "--groups",
@@ -78,6 +84,26 @@ def parse_args() -> argparse.Namespace:
         "--screen-only",
         action="store_true",
         help="Run only val_screen200 and skip full validation even for qualified models.",
+    )
+    parser.add_argument(
+        "--runtime-success-threshold",
+        type=float,
+        default=THRESHOLDS["runtime_success"],
+    )
+    parser.add_argument(
+        "--format-ok-threshold",
+        type=float,
+        default=THRESHOLDS["format_ok"],
+    )
+    parser.add_argument(
+        "--valid-parse-threshold",
+        type=float,
+        default=THRESHOLDS["valid_parse"],
+    )
+    parser.add_argument(
+        "--truncation-threshold",
+        type=float,
+        default=THRESHOLDS["truncation_without_answer_rate"],
     )
     return parser.parse_args()
 
@@ -146,8 +172,17 @@ def filter_registry(registry: List[Dict[str, Any]], groups: List[str], labels: L
     return selected
 
 
-def run_benchmark(project_root: Path, stage: str, model_label: str, model_path: str, manifest: Path, max_new_tokens: int, resume: bool) -> Dict[str, Any]:
-    run_dir = project_root / "outputs" / "qualification_runs" / stage / model_label
+def run_benchmark(
+    project_root: Path,
+    run_root: Path,
+    stage: str,
+    model_label: str,
+    model_path: str,
+    manifest: Path,
+    max_new_tokens: int,
+    resume: bool,
+) -> Dict[str, Any]:
+    run_dir = run_root / stage / model_label
     ensure_dir(run_dir)
     summary_path = run_dir / "summary.json"
     if resume and summary_path.exists():
@@ -175,12 +210,12 @@ def run_benchmark(project_root: Path, stage: str, model_label: str, model_path: 
     return {"status": "ok", "summary": load_json(run_dir / "summary.json")}
 
 
-def passed_thresholds(summary: Dict[str, Any]) -> bool:
+def passed_thresholds(summary: Dict[str, Any], thresholds: Dict[str, float]) -> bool:
     return (
-        summary["runtime_success"] >= THRESHOLDS["runtime_success"]
-        and summary["format_ok"] >= THRESHOLDS["format_ok"]
-        and summary["valid_parse"] >= THRESHOLDS["valid_parse"]
-        and summary["truncation_without_answer_rate"] <= THRESHOLDS["truncation_without_answer_rate"]
+        summary["runtime_success"] >= thresholds["runtime_success"]
+        and summary["format_ok"] >= thresholds["format_ok"]
+        and summary["valid_parse"] >= thresholds["valid_parse"]
+        and summary["truncation_without_answer_rate"] <= thresholds["truncation_without_answer_rate"]
     )
 
 
@@ -228,9 +263,20 @@ def summary_row(model: Dict[str, Any], stage: str, max_new_tokens: int, run_stat
 def main() -> None:
     args = parse_args()
     project_root = args.project_root.resolve()
+    run_root = (
+        args.run_root.resolve()
+        if args.run_root is not None
+        else (project_root / "outputs" / "qualification_runs").resolve()
+    )
     registry = load_json(args.model_registry.resolve())
     screen_manifest = args.screen_manifest.resolve()
     validation_manifest = args.validation_manifest.resolve()
+    thresholds = {
+        "runtime_success": args.runtime_success_threshold,
+        "format_ok": args.format_ok_threshold,
+        "valid_parse": args.valid_parse_threshold,
+        "truncation_without_answer_rate": args.truncation_threshold,
+    }
     selected_models = filter_registry(registry, args.groups, args.labels)
     report_csv_path, output_mode = resolve_report_path(
         project_root=project_root,
@@ -258,6 +304,7 @@ def main() -> None:
 
         result = run_benchmark(
             project_root=project_root,
+            run_root=run_root,
             stage="screen",
             model_label=model["label"],
             model_path=model["snapshot_path"],
@@ -279,7 +326,7 @@ def main() -> None:
             continue
 
         summary = result["summary"]
-        qualified = "yes" if passed_thresholds(summary) else "no"
+        qualified = "yes" if passed_thresholds(summary, thresholds) else "no"
         rows.append(
             summary_row(
                 model=model,
@@ -299,6 +346,7 @@ def main() -> None:
     for model in qualified_models:
         result = run_benchmark(
             project_root=project_root,
+            run_root=run_root,
             stage="validation",
             model_label=model["label"],
             model_path=model["snapshot_path"],

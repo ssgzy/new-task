@@ -43,6 +43,12 @@ def parse_args() -> argparse.Namespace:
         default=Path(__file__).resolve().parents[1] / "outputs" / "calibration_report.csv",
     )
     parser.add_argument(
+        "--run-root",
+        type=Path,
+        default=None,
+        help="Optional root directory for per-model calibration runs. Defaults to outputs/calibration_runs.",
+    )
+    parser.add_argument(
         "--groups",
         type=str,
         nargs="+",
@@ -133,8 +139,16 @@ def filter_registry(registry: List[Dict[str, Any]], groups: List[str], labels: L
     return selected
 
 
-def run_benchmark(project_root: Path, model_label: str, model_path: str, manifest: Path, max_new_tokens: int, resume: bool) -> Dict[str, Any]:
-    run_dir = project_root / "outputs" / "calibration_runs" / model_label / f"max_new_tokens_{max_new_tokens}"
+def run_benchmark(
+    project_root: Path,
+    run_root: Path,
+    model_label: str,
+    model_path: str,
+    manifest: Path,
+    max_new_tokens: int,
+    resume: bool,
+) -> Dict[str, Any]:
+    run_dir = run_root / model_label / f"max_new_tokens_{max_new_tokens}"
     ensure_dir(run_dir)
     summary_path = run_dir / "summary.json"
     if resume and summary_path.exists():
@@ -176,6 +190,11 @@ def run_benchmark(project_root: Path, model_label: str, model_path: str, manifes
 def main() -> None:
     args = parse_args()
     project_root = args.project_root.resolve()
+    run_root = (
+        args.run_root.resolve()
+        if args.run_root is not None
+        else (project_root / "outputs" / "calibration_runs").resolve()
+    )
     registry = load_json(args.model_registry.resolve())
     manifest = args.manifest.resolve()
     selected_models = filter_registry(registry, args.groups, args.labels)
@@ -215,6 +234,7 @@ def main() -> None:
 
             result = run_benchmark(
                 project_root=project_root,
+                run_root=run_root,
                 model_label=model["label"],
                 model_path=model["snapshot_path"],
                 manifest=manifest,

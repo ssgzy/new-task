@@ -1,0 +1,89 @@
+{
+  "model_label": "Yi-1.5-6B-Chat",
+  "group": "mainstream_instruction_prescreen",
+  "model_family": "mainstream_chat",
+  "method_family": "chat_sft",
+  "base_model_family": "yi",
+  "repo_id": "01-ai/Yi-1.5-6B-Chat",
+  "registry_status": "available_or_downloaded",
+  "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--01-ai--Yi-1.5-6B-Chat/snapshots/771924d1c83d67527d665913415d7086f11ea9c0",
+  "wrapper_family": "chat_template",
+  "default_wrapper": "chat_template",
+  "allow_chat_template": true,
+  "fallback_wrapper": "plain",
+  "wrapper_notes": "mainstream chat prescreen candidate; prefer official tokenizer chat_template and only fall back to plain if the local tokenizer snapshot lacks it",
+  "tokenizer_load_policy": {
+    "model_label": "Yi-1.5-6B-Chat",
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior"
+  },
+  "tokenizer": {
+    "class_name": "TokenizersBackend",
+    "is_fast": true,
+    "chat_template_exists": true,
+    "pad_token": "<unk>",
+    "pad_token_id": 0,
+    "eos_token": "<|im_end|>",
+    "eos_token_id": 7,
+    "bos_token": "<|startoftext|>",
+    "bos_token_id": 1,
+    "unk_token": "<unk>",
+    "unk_token_id": 0,
+    "special_tokens_map": {
+      "bos_token": "<|startoftext|>",
+      "eos_token": "<|im_end|>",
+      "unk_token": "<unk>",
+      "pad_token": "<unk>"
+    }
+  },
+  "model_config": {
+    "model_type": "llama",
+    "pad_token_id": 0,
+    "eos_token_id": 2,
+    "bos_token_id": 1,
+    "token_id_alignment_reasonable": false
+  },
+  "model_loader": {
+    "loader_name": "AutoModelForCausalLM",
+    "effective_model_class_name": "LlamaForCausalLM"
+  },
+  "prompt_candidates": [
+    {
+      "requested_prompt_mode": "registry",
+      "resolved_mode": "chat_template",
+      "effective_mode": "chat_template",
+      "fallback_reason": "",
+      "has_assistant_generation_boundary": true,
+      "rendered_prompt_head_500": "You are a precise financial question answering assistant.\nUse only the provided table and text.\nDo not show your reasoning.\nDo not explain.\nOutput exactly one final line in this format:\nAnswer: <numeric value><|im_start|>user\n### Context\n### Pre Text\nrepurchase of equity securities the following table provides information regarding our purchases of equity securities during the fourth quarter of 2008 : number of shares purchased average paid per share2 total number of shares purchased as part of ",
+      "rendered_prompt_tail_300": " was calculated by dividing the aggregate value of the tax withholding obligations for each month by the aggregate number of shares of our common stock withheld each month. .\n\n### Question\nhow much more , in percent , was spent on october shares than november shares?<|im_end|>\n<|im_start|>assistant\n"
+    }
+  ],
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 7,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 7,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 7
+    },
+    "actions": [
+      "set model.config.eos_token_id = tokenizer.eos_token_id"
+    ],
+    "changed": true
+  },
+  "skip_reason": "",
+  "runtime_error": ""
+}
