@@ -1,53 +1,60 @@
 # 项目总览
 
-## 项目目标
-- 在全新项目目录中重建 FinQA benchmark 流程，避免继承旧项目结构、旧脚本假设和旧实验残留。
-- 交付四个硬性结果：FinQA 全量原始 split、`protocol_v1`、`calibration_report.csv`、`qualification_summary.csv`。
-- 全程同步维护 Obsidian 文档、日志、命令记录和结果索引，确保结果可追踪。
+## 项目基本信息
+- 项目名称：CDS527 Group Assignment
+- 项目根目录：`/Users/sam/Documents/Documents - sam的MacBook Pro/LU课程资料/CDS527 Big Data Analytics Language Models/CDS527 group project`
+- 执行环境：conda `CDS527`（Python 3.10.19，PySpark 3.1.2，JupyterLab 4.5.3）
+- 当前核心输入：
+  - `Group_Project_2026_T2 .docx`（作业说明）
+  - `GAI Declaration Sheet (sample).docx`
+  - `Google.docx`（Task 2 素材）
+  - `SMILE Twitter Emotion Dataset.docx`（数据说明）
+  - `smile-annotations-final.csv`（Task 1 数据，1299 行）
+  - `PySpark.png`（官方实验大纲图）
 
-## 当前工作目录
-- 项目根目录：`/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task`
-- Python 环境：`conda` 的 `Lion`
+## 导航
+- [[当前状态]]
+- [[实验协议]]
+- [[任务笔记 - Task1 内容梳理]]
+- [[数据说明]]
+- [[结果索引]]
+- [[问题与坑点]]
+- [[下一步]]
+- [[项目规范 - 执行流程]]
+- [[任务笔记 - 阅读作业要求]]
+- [[常用命令]]
+- [[会话日志]]
 
-## 目录结构
-- `docs/`：说明性文档与实验协议
-- `logs/`：会话日志与日期日志
-- `outputs/`：报表、汇总结果、后续 benchmark 输出
-- `data/`：FinQA 原始数据、标准化 manifest、后续缓存
-- `scripts/`：数据处理、协议实现、评测脚本
+## 当前目标
+- **Task 1 Notebook 主线实验全部完成** ✅
+- 待完成：`Group_X.report.docx`（Task 2 case study）、`Group_X.present.pptx`、`Group_X.gai.docx`、`work_distribution.docx`
 
-## 核心文档导航
-- 状态入口：[[当前状态]]
-- 本轮任务：[[任务笔记 - FinQA 基准重建]]
-- 实验协议：[[实验协议_v1]]
-- 数据记录：[[数据重拉与字段核对]]
-- 输入接口诊断：[[输入接口诊断]]
-- 输入包装修复过程总结：[[过程总结_输入包装修复]]
-- 长度校准：[[长度校准报告]]
-- 准入筛选：[[准入筛选总结]]
-- 模型状态：[[模型注册表]]
-- 组员运行：[[组员运行说明]]
-- 异常与决策：[[异常与决策记录]]
-- Claude 建议核查：[[Claude建议核查]]
-- 日志入口：[[会话日志]]
-- 常用命令：[[常用命令]]
-- 下一步：[[下一步]]
+## 执行总纲（Step 进度）
+| Step | 内容 | 状态 |
+|------|------|------|
+| 1 | 项目现状检查 | ✅ 完成 |
+| 2 | 文档体系梳理与补齐 | ✅ 完成 |
+| 3 | 环境检查 | ✅ 完成 |
+| 4 | 数据读取与审查 | ✅ 完成 |
+| 5 | 固定实验协议 | ✅ 完成 |
+| 6 | Baseline（TF-IDF + LR，macro-F1=0.2337） | ✅ 完成 |
+| 7 | 模型比较（Section 2，最优 CNB=0.3332） | ✅ 完成 |
+| 8 | 表示方法比较（Section 3，固定 LR 设置下 BOW 系列无差异） | ✅ 完成 |
+| 9 | 改进方法与深度分析（Section 4，最优 LR+Weight rp=0.5，macro-F1=0.3453） | ✅ 完成 |
 
-## 模型分组
-### 正式主表（参与 student selection）
-- Lion-7B
-- Orca-2-7B
-- Zephyr-7B-beta
-- MiniLLM-Llama-7B
+## 最终实验结果摘要
+| Section | 最佳配置 | macro-F1 |
+|---------|---------|---------|
+| S1 Baseline | TF-IDF unigram + LR | 0.2337 |
+| S2 Model Comparison | TF-IDF unigram + CNB | 0.3332 |
+| S3 Repr Comparison | 固定 LR 下 BOW 系列无差异 | 0.2337 |
+| **S4 Improvement** | **LR + 逆频率类别权重 (rp=0.5)** | **0.3453** ← 全项目最优 |
 
-### 扩展表（appendix / supplementary）
-- DeepSeek-R1-Distill-Qwen-7B
-- OpenR1-Distill-7B
-
-## 强约束
-- 严禁使用 `test1147` 做任何模型筛选、prompt 调整、token 长度选择、parser 修补或 student selection。
-- 先做字段核对，不默认相信旧脚本或旧 parser。
-- 冻结统一 prompt / parser / decode config，不为单个模型写特殊规则。
-
-## 非 markdown 资料
-- `Lion-7B 之后公开 7B 蒸馏模型与论文梳理.pdf`：当前目录中已有的外部参考 PDF，后续如读取会在 [[会话日志]] 和相关任务 note 中记录用途。
+## 当前目录结构
+- `文档/`：Obsidian 主笔记区
+- `日志/`：过程日志（`会话日志.md`）
+- `输出/figures/`：10 张可视化图（fig1–fig10）
+- `输出/reports/`：全部文本报告（EDA + S1–S4）
+- `输出/data/`：3 个 CSV（S2/S3/S4 结果）
+- `工作区/Group_X.code.ipynb`：Task 1 主 Notebook（Section 0–9 全部完成）
+- `tmp/docs/`：DOCX 临时提取结果
