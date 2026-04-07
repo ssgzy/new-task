@@ -28,6 +28,7 @@ from finqa_protocol_v1 import (
     resolve_tokenizer_load_policy,
     tolerance_match,
 )
+from relaxed_scoring import score_prediction
 
 
 def parse_args() -> argparse.Namespace:
@@ -94,8 +95,36 @@ def load_existing_jsonl(path: Path) -> List[Dict[str, Any]]:
             line = line.strip()
             if not line:
                 continue
-            rows.append(json.loads(line))
+            row = json.loads(line)
+            enrich_scoring_fields(row)
+            rows.append(row)
     return rows
+
+
+def enrich_scoring_fields(row: Dict[str, Any]) -> None:
+    strict_em = bool(row.get("em", False))
+    strict_tm = bool(row.get("tm", False))
+    strict_pred_value = row.get("parse", {}).get("pred_value")
+
+    prediction_text = row.get("prediction_text", "")
+    gold_numeric = row.get("gold_numeric")
+    if prediction_text and gold_numeric is not None:
+        relaxed_payload = score_prediction(prediction_text=prediction_text, gold_numeric=gold_numeric)
+        relaxed_em = bool(relaxed_payload["relaxed_em"])
+        relaxed_tm = bool(relaxed_payload["relaxed_tm"])
+        relaxed_pred_value = relaxed_payload["relaxed_parsed"]
+    else:
+        relaxed_em = False
+        relaxed_tm = False
+        relaxed_pred_value = None
+
+    row["strict_em"] = strict_em
+    row["strict_tm"] = strict_tm
+    row["strict_pred_value"] = strict_pred_value
+    row["relaxed_em"] = relaxed_em
+    row["relaxed_tm"] = relaxed_tm
+    row["relaxed_pred_value"] = relaxed_pred_value
+    row["relaxed_gap_tm"] = int(relaxed_tm) - int(strict_tm)
 
 
 def load_manifest(path: Path, limit: int = 0) -> List[Dict[str, Any]]:
@@ -259,8 +288,10 @@ def summarize(
     runtime_success_count = sum(1 for row in results if row["runtime_success"])
     format_ok_count = sum(1 for row in results if row["parse"]["format_ok"])
     valid_parse_count = sum(1 for row in results if row["parse"]["valid_parse"])
-    em_count = sum(1 for row in results if row["em"])
-    tm_count = sum(1 for row in results if row["tm"])
+    em_count = sum(1 for row in results if row.get("strict_em", row.get("em", False)))
+    tm_count = sum(1 for row in results if row.get("strict_tm", row.get("tm", False)))
+    relaxed_em_count = sum(1 for row in results if row.get("relaxed_em", False))
+    relaxed_tm_count = sum(1 for row in results if row.get("relaxed_tm", False))
     trunc_wo_answer_count = sum(
         1 for row in results if row["parse"]["truncated_suspect"] and not row["parse"]["format_ok"]
     )
@@ -282,6 +313,11 @@ def summarize(
         "valid_parse": round(valid_parse_count / total, 6) if total else 0.0,
         "em": round(em_count / total, 6) if total else 0.0,
         "tm": round(tm_count / total, 6) if total else 0.0,
+        "strict_em": round(em_count / total, 6) if total else 0.0,
+        "strict_tm": round(tm_count / total, 6) if total else 0.0,
+        "relaxed_em": round(relaxed_em_count / total, 6) if total else 0.0,
+        "relaxed_tm": round(relaxed_tm_count / total, 6) if total else 0.0,
+        "relaxed_gap_tm": round((relaxed_tm_count - tm_count) / total, 6) if total else 0.0,
         "truncation_without_answer_rate": round(trunc_wo_answer_count / total, 6) if total else 0.0,
         "answer_present_rate": round(format_ok_count / total, 6) if total else 0.0,
         "valid_parse_rate": round(valid_parse_count / total, 6) if total else 0.0,
@@ -372,6 +408,13 @@ def main() -> None:
             },
             "em": False,
             "tm": False,
+            "strict_em": False,
+            "strict_tm": False,
+            "strict_pred_value": None,
+            "relaxed_em": False,
+            "relaxed_tm": False,
+            "relaxed_pred_value": None,
+            "relaxed_gap_tm": 0,
         }
 
         try:
@@ -470,6 +513,7 @@ def main() -> None:
             row["parse"] = parse
             row["em"] = exact_match(pred_value, record["gold_numeric"]) if parse["valid_parse"] else False
             row["tm"] = tolerance_match(pred_value, record["gold_numeric"]) if parse["valid_parse"] else False
+            enrich_scoring_fields(row)
         except Exception as exc:  # pragma: no cover - runtime dependent
             row["error"] = f"{type(exc).__name__}: {exc}"
 

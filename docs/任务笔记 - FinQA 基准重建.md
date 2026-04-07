@@ -358,3 +358,22 @@
 - 当前未通过：
   - `Zephyr-7B-beta`
   - `ChatGLM3-6B`
+
+## 2026-04-07 评分与报告整理
+- 当前目标：
+  - 不改 strict 主协议
+  - 把 relaxed scoring 作为补充接进工程
+  - 把主表角色、报告写法、组员运行入口整理到可直接使用状态
+- 已完成代码：
+  - `scripts/relaxed_scoring.py`
+  - `scripts/run_finqa_local_benchmark_v1.py`
+  - `scripts/run_qualification_v1.py`
+  - `scripts/run_validation883_assigned_v1.py`
+- 已完成文档：
+  - `[[模型谱系与主表角色说明]]`
+  - `[[评分逻辑与报告写作指南]]`
+  - `[[组员运行说明_validation883]]`
+  - `[[当前主表建议]]`
+- 当前结论：
+  - strict 主线未被替换
+  - relaxed scoring 已接入，但尚未重跑全量 `validation883`

@@ -1,0 +1,16 @@
+# FinQA validation883 / reports environment
+# Verified local Python baseline: 3.11.14
+# Keep this file additive relative to requirements-benchmark.txt; do not remove
+# special-path dependencies that are needed for Orca tokenizer fallback or
+# ChatGLM3 trust_remote_code compatibility.
+
+huggingface_hub==1.4.1
+numpy==2.4.1
+protobuf==3.20.3
+psutil==7.2.2
+safetensors==0.7.0
+sentencepiece==0.1.99
+tiktoken==0.12.0
+tokenizers==0.22.2
+torch==2.10.0
+transformers==5.1.0
