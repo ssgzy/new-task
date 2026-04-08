@@ -539,3 +539,32 @@
   - `summary.json` 尚未生成
 - 当前结论：
   - `ChatGLM3-6B` 已进入正式 `validation883` 执行阶段
+
+## 2026-04-08 ChatGLM3 validation883 运行中 checkpoint
+- 当前进度：
+  - `predictions.jsonl` 已推进到约 `717 / 883`
+  - `summary.json` 尚未生成
+- 当前结论：
+  - `ChatGLM3-6B` 正在稳定推进，当前无新的 runtime error
+
+## 2026-04-08 ChatGLM3 validation883 完成
+- 一致性：
+  - `predictions.jsonl = 883`
+  - `summary.json.num_examples = 883`
+- 当前正式结果：
+  - `Strict TM = 0.014723`
+  - `Strict EM = 0.007928`
+  - `Relaxed TM = 0.027180`
+  - `Relaxed gap = 0.012458`
+  - `format_ok = 0.380521`
+  - `valid_parse = 0.253681`
+  - `truncation_without_answer_rate = 0.600227`
+- 当前结论：
+  - `ChatGLM3-6B` 已成为本轮第五个完成 `validation883` 的模型
+  - 当前不再保留其 `boundary-pass` 候选定位
+
+## 2026-04-09 组会汇报资料整理
+- 新增文件：
+  - `docs/组会汇报资料清单.md`
+- 当前结论：
+  - 现在已经有一份面向老师汇报和 `NotebookLM` 的最小上传清单
