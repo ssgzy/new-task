@@ -1,5 +1,24 @@
 [
   {
+    "model_label": "ChatGLM3-6B",
+    "status": "running_no_summary",
+    "predictions_lines": 9,
+    "runtime_success": null,
+    "format_ok": null,
+    "valid_parse": null,
+    "strict_em": null,
+    "strict_tm": null,
+    "relaxed_em": null,
+    "relaxed_tm": null,
+    "relaxed_gap_tm": null,
+    "truncation_without_answer_rate": null,
+    "avg_latency_ms": null,
+    "tok_per_sec": null,
+    "peak_vram": null,
+    "mean_output_tokens": null,
+    "notes": "predictions_lines=9"
+  },
+  {
     "model_label": "Mistral-7B-Instruct-v0.3",
     "status": "ok",
     "predictions_lines": 883,

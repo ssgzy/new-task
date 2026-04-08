@@ -518,3 +518,24 @@
   - `truncation_without_answer_rate = 0.005663`
 - 当前结论：
   - `Yi-1.5-6B-Chat` 已成为本轮第四个完成 `validation883` 的模型
+
+## 2026-04-08 ChatGLM3 validation883 启动前检查
+- 当前状态：
+  - `Qwen2.5-7B-Instruct` 已完成
+  - `Mistral-7B-Instruct-v0.3` 已完成
+  - `Orca-2-7B` 已完成
+  - `Yi-1.5-6B-Chat` 已完成
+  - 当前无活跃 `validation883` 进程
+- 当前计划：
+  - 立刻启动 `ChatGLM3-6B`
+  - 确认其输出目录与逐样本落盘状态正常
+
+## 2026-04-08 ChatGLM3 validation883 启动成功
+- 当前命令：
+  - `conda run -n Lion python scripts/run_validation883_assigned_v1.py --label 'ChatGLM3-6B' --resume-existing`
+- 当前 checkpoint：
+  - 外层 wrapper 与内层 benchmark 均已启动
+  - `predictions.jsonl` 已开始写入，当前约 `9 / 883`
+  - `summary.json` 尚未生成
+- 当前结论：
+  - `ChatGLM3-6B` 已进入正式 `validation883` 执行阶段

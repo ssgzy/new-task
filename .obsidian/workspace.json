@@ -201,6 +201,8 @@
   },
   "active": "b87f297df1984a06",
   "lastOpenFiles": [
+    "outputs/provisional/validation883_assigned/ChatGLM3-6B/predictions.jsonl",
+    "outputs/provisional/validation883_assigned/ChatGLM3-6B",
     "scripts/__pycache__/build_validation883_table_v1.cpython-313.pyc",
     "outputs/provisional/validation883_assigned/Yi-1.5-6B-Chat/report.csv",
     "outputs/provisional/validation883_assigned/Yi-1.5-6B-Chat/summary.json",
@@ -210,8 +212,6 @@
     "outputs/provisional/validation883_assigned/Orca-2-7B/summary.json",
     "outputs/provisional/validation883_assigned/Orca-2-7B/predictions.jsonl",
     "outputs/provisional/validation883_assigned/Orca-2-7B",
-    "outputs/provisional/validation883_assigned/Mistral-7B-Instruct-v0.3/report.csv",
-    "outputs/provisional/validation883_assigned/Mistral-7B-Instruct-v0.3/summary.json",
     "outputs/provisional/validation883_assigned/validation883_status_table.md",
     "docs/过程总结_新增候选失败类型分类.md",
     "docs/过程总结_主表扩展与新增模型筛查.md",
