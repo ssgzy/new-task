@@ -7,7 +7,7 @@
     "base_model_family": "yi",
     "notes": "official mainstream chat prescreen candidate; prefer tokenizer chat_template path in provisional smoke",
     "repo_id": "01-ai/Yi-1.5-6B-Chat",
-    "status": "available_or_downloaded",
+    "status": "available_local",
     "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--01-ai--Yi-1.5-6B-Chat/snapshots/771924d1c83d67527d665913415d7086f11ea9c0",
     "resolved_revision": "771924d1c83d67527d665913415d7086f11ea9c0",
     "num_siblings": 14,

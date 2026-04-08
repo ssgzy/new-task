@@ -1,0 +1,2 @@
+model_label,stage,max_new_tokens,runtime_success,format_ok,valid_parse,em,tm,strict_em,strict_tm,relaxed_em,relaxed_tm,relaxed_gap_tm,truncation_without_answer_rate,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens
+Yi-1.5-6B-Chat,validation883,256,1.0,0.898075,0.742922,0.05436,0.09966,0.05436,0.09966,0.083805,0.152888,0.053228,0.005663,4341.07,4.2706,12123144960,18.54

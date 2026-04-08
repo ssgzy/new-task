@@ -1,0 +1,62 @@
+{
+  "model_label": "Yi-1.5-6B-Chat",
+  "model_path": "/Users/sam/.cache/huggingface/hub/models--01-ai--Yi-1.5-6B-Chat/snapshots/771924d1c83d67527d665913415d7086f11ea9c0",
+  "manifest": "/Users/sam/Documents/Documents - sam的MacBook Pro/论文📑/Distillation/new task/data/manifests/validation883.jsonl",
+  "num_examples": 883,
+  "runtime_success": 1.0,
+  "format_ok": 0.898075,
+  "valid_parse": 0.742922,
+  "em": 0.05436,
+  "tm": 0.09966,
+  "strict_em": 0.05436,
+  "strict_tm": 0.09966,
+  "relaxed_em": 0.083805,
+  "relaxed_tm": 0.152888,
+  "relaxed_gap_tm": 0.053228,
+  "truncation_without_answer_rate": 0.005663,
+  "answer_present_rate": 0.898075,
+  "valid_parse_rate": 0.742922,
+  "avg_latency_ms": 4341.07,
+  "mean_output_tokens": 18.54,
+  "mean_new_tokens": 18.54,
+  "p95_new_tokens": 67,
+  "tok_per_sec": 4.2706,
+  "peak_vram": 12123144960,
+  "device": "mps",
+  "dtype": "float16",
+  "max_new_tokens": 256,
+  "prompt_render_mode": "auto",
+  "repetition_penalty": 1.1,
+  "tokenizer_load_policy": {
+    "model_label": "Yi-1.5-6B-Chat",
+    "requested_use_fast": null,
+    "requested_tokenizer_class_name": "AutoTokenizer",
+    "effective_tokenizer_class_name": "TokenizersBackend",
+    "effective_tokenizer_is_fast": true,
+    "trust_remote_code": false,
+    "notes": "default AutoTokenizer.from_pretrained behavior",
+    "config_patch_notes": []
+  },
+  "special_token_alignment": {
+    "before": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 7,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 2
+    },
+    "after": {
+      "tokenizer_pad_token": "<unk>",
+      "tokenizer_pad_token_id": 0,
+      "tokenizer_eos_token": "<|im_end|>",
+      "tokenizer_eos_token_id": 7,
+      "model_config_pad_token_id": 0,
+      "model_config_eos_token_id": 7
+    },
+    "actions": [
+      "set model.config.eos_token_id = tokenizer.eos_token_id"
+    ],
+    "changed": true
+  }
+}

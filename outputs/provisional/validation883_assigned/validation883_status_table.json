@@ -19,6 +19,25 @@
     "notes": ""
   },
   {
+    "model_label": "Orca-2-7B",
+    "status": "ok",
+    "predictions_lines": 883,
+    "runtime_success": 1.0,
+    "format_ok": 0.95017,
+    "valid_parse": 0.838052,
+    "strict_em": 0.03624,
+    "strict_tm": 0.065685,
+    "relaxed_em": 0.044168,
+    "relaxed_tm": 0.080408,
+    "relaxed_gap_tm": 0.014723,
+    "truncation_without_answer_rate": 0.026048,
+    "avg_latency_ms": 5180.55,
+    "tok_per_sec": 4.6251,
+    "peak_vram": 13477529088,
+    "mean_output_tokens": 23.96,
+    "notes": ""
+  },
+  {
     "model_label": "Qwen2.5-7B-Instruct",
     "status": "ok",
     "predictions_lines": 883,
@@ -35,6 +54,25 @@
     "tok_per_sec": 2.4163,
     "peak_vram": 15232224512,
     "mean_output_tokens": 8.14,
+    "notes": ""
+  },
+  {
+    "model_label": "Yi-1.5-6B-Chat",
+    "status": "ok",
+    "predictions_lines": 883,
+    "runtime_success": 1.0,
+    "format_ok": 0.898075,
+    "valid_parse": 0.742922,
+    "strict_em": 0.05436,
+    "strict_tm": 0.09966,
+    "relaxed_em": 0.083805,
+    "relaxed_tm": 0.152888,
+    "relaxed_gap_tm": 0.053228,
+    "truncation_without_answer_rate": 0.005663,
+    "avg_latency_ms": 4341.07,
+    "tok_per_sec": 4.2706,
+    "peak_vram": 12123144960,
+    "mean_output_tokens": 18.54,
     "notes": ""
   }
 ]

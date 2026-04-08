@@ -447,3 +447,74 @@
   - `truncation_without_answer_rate = 0.000000`
 - 当前结论：
   - `Mistral-7B-Instruct-v0.3` 已成为本轮第二个完成 `validation883` 的模型
+
+## 2026-04-08 Orca validation883 启动
+- 当前新启动模型：
+  - `Orca-2-7B`
+- 当前 checkpoint：
+  - wrapper 与内层 benchmark 均已启动
+  - 输出目录已创建
+  - `predictions.jsonl` 尚未开始落盘
+  - 当前仍在初始化阶段
+
+## 2026-04-08 Orca validation883 完成
+- 一致性：
+  - `predictions.jsonl = 883`
+  - `summary.json.num_examples = 883`
+- 当前正式结果：
+  - `Strict TM = 0.065685`
+  - `Strict EM = 0.036240`
+  - `Relaxed TM = 0.080408`
+  - `Relaxed gap = 0.014723`
+  - `format_ok = 0.950170`
+  - `valid_parse = 0.838052`
+  - `truncation_without_answer_rate = 0.026048`
+- 当前结论：
+  - `Orca-2-7B` 已成为本轮第三个完成 `validation883` 的模型
+
+## 2026-04-08 Yi validation883 接续启动前检查
+- 当前状态：
+  - `Qwen2.5-7B-Instruct` 已完成
+  - `Mistral-7B-Instruct-v0.3` 已完成
+  - `Orca-2-7B` 已完成
+  - 当前无活跃 `validation883` 进程
+- 当前计划：
+  - 立刻启动 `Yi-1.5-6B-Chat`
+  - 确认其输出目录与逐样本落盘状态正常
+
+## 2026-04-08 Yi validation883 启动成功
+- 当前命令：
+  - `conda run -n Lion python scripts/run_validation883_assigned_v1.py --label 'Yi-1.5-6B-Chat' --resume-existing`
+- 当前 checkpoint：
+  - 外层 wrapper 与内层 benchmark 均已启动
+  - `predictions.jsonl` 已开始写入，当前约 `22 / 883`
+  - `summary.json` 尚未生成
+- 当前结论：
+  - `Yi-1.5-6B-Chat` 已进入正式 `validation883` 执行阶段
+
+## 2026-04-08 Orca 结果复核
+- 重新读取：
+  - `outputs/provisional/validation883_assigned/Orca-2-7B/summary.json`
+- 补记指标：
+  - `Strict TM = 0.065685`
+  - `Relaxed TM = 0.080408`
+  - `format_ok = 0.950170`
+  - `valid_parse = 0.838052`
+  - `truncation_without_answer_rate = 0.026048`
+- 当前结论：
+  - `Orca-2-7B` 结果没有丢失，只是用户要求下再次复核并补记
+
+## 2026-04-08 Yi validation883 完成
+- 一致性：
+  - `predictions.jsonl = 883`
+  - `summary.json.num_examples = 883`
+- 当前正式结果：
+  - `Strict TM = 0.099660`
+  - `Strict EM = 0.054360`
+  - `Relaxed TM = 0.152888`
+  - `Relaxed gap = 0.053228`
+  - `format_ok = 0.898075`
+  - `valid_parse = 0.742922`
+  - `truncation_without_answer_rate = 0.005663`
+- 当前结论：
+  - `Yi-1.5-6B-Chat` 已成为本轮第四个完成 `validation883` 的模型

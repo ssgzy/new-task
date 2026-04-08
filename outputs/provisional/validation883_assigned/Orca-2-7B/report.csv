@@ -1,0 +1,2 @@
+model_label,stage,max_new_tokens,runtime_success,format_ok,valid_parse,em,tm,strict_em,strict_tm,relaxed_em,relaxed_tm,relaxed_gap_tm,truncation_without_answer_rate,avg_latency_ms,tok_per_sec,peak_vram,mean_output_tokens
+Orca-2-7B,validation883,256,1.0,0.95017,0.838052,0.03624,0.065685,0.03624,0.065685,0.044168,0.080408,0.014723,0.026048,5180.55,4.6251,13477529088,23.96

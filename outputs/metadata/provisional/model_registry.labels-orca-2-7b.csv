@@ -1,2 +1,2 @@
-label,group,repo_id,status,snapshot_path,resolved_revision,num_siblings,error
-Orca-2-7B,main,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,14,
+label,group,model_family,method_family,base_model_family,repo_id,status,snapshot_path,resolved_revision,num_siblings,error,notes
+Orca-2-7B,main,instruction_distill,,,microsoft/Orca-2-7b,available_local,/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,60e31e6bdcf582ad103b807cb74b73ee1d2c4b17,14,,current formal instruction candidate; ChatML + LlamaTokenizer path recovered on 1-sample smoke

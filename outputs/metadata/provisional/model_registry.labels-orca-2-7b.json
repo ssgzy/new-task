@@ -2,6 +2,10 @@
   {
     "label": "Orca-2-7B",
     "group": "main",
+    "model_family": "instruction_distill",
+    "method_family": "",
+    "base_model_family": "",
+    "notes": "current formal instruction candidate; ChatML + LlamaTokenizer path recovered on 1-sample smoke",
     "repo_id": "microsoft/Orca-2-7b",
     "status": "available_local",
     "snapshot_path": "/Users/sam/.cache/huggingface/hub/models--microsoft--Orca-2-7b/snapshots/60e31e6bdcf582ad103b807cb74b73ee1d2c4b17",
