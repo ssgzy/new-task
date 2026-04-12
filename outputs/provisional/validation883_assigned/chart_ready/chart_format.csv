@@ -1,0 +1,6 @@
+model_label,format_ok,valid_parse,truncation_without_answer_rate,runtime_success
+Qwen2.5-7B-Instruct,0.997735,0.98188,0.0,1.0
+Mistral-7B-Instruct-v0.3,0.998867,0.778029,0.0,1.0
+Yi-1.5-6B-Chat,0.898075,0.742922,0.005663,1.0
+Orca-2-7B,0.95017,0.838052,0.026048,1.0
+ChatGLM3-6B,0.380521,0.253681,0.600227,1.0

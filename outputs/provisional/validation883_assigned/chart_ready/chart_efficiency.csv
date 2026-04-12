@@ -1,0 +1,6 @@
+model_label,avg_latency_ms,tok_per_sec,peak_vram_bytes,peak_vram_gb,mean_output_tokens
+Qwen2.5-7B-Instruct,3369.95,2.4163,15232224512,14.19,8.14
+Mistral-7B-Instruct-v0.3,4628.89,2.7585,14496533760,13.5,12.77
+Yi-1.5-6B-Chat,4341.07,4.2706,12123144960,11.29,18.54
+Orca-2-7B,5180.55,4.6251,13477529088,12.55,23.96
+ChatGLM3-6B,21112.13,7.5357,14306105856,13.32,159.09

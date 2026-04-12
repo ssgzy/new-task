@@ -1,0 +1,6 @@
+model_label,screen200_format_ok,screen200_valid_parse,screen200_truncation,screen200_tm,validation883_format_ok,validation883_valid_parse,validation883_truncation,validation883_strict_tm
+Qwen2.5-7B-Instruct,1.0,0.98,0.0,0.335,0.997735,0.98188,0.0,0.359003
+Mistral-7B-Instruct-v0.3,1.0,0.77,0.0,0.155,0.998867,0.778029,0.0,0.166478
+Yi-1.5-6B-Chat,0.905,0.71,0.005,0.085,0.898075,0.742922,0.005663,0.09966
+Orca-2-7B,0.96,0.845,0.025,0.075,0.95017,0.838052,0.026048,0.065685
+ChatGLM3-6B,0.83,0.595,0.045,0.04,0.380521,0.253681,0.600227,0.014723
