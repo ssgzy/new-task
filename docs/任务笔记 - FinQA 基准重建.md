@@ -578,3 +578,16 @@
   - 逐列补写字段含义、当前结果读法和报告引用方式
 - 当前结论：
   - 后续解释 `validation883` 结果时，不再需要临时口头说明各列含义
+
+## 2026-04-16 validation883错误分类分析
+- 新增文件：
+  - `scripts/validation883_error_taxonomy_v1.py`
+  - `docs/validation883错误分类_v1.md`
+- 本轮动作：
+  - 读取 `validation883_assigned/*/predictions.jsonl`
+  - 基于现有字段追加后验 taxonomy
+  - 生成模型级、总体级、样本级和人工复核候选输出
+  - 生成一个简短 markdown 摘要
+- 当前结论：
+  - 当前已经具备一套独立于主 benchmark 的后验错误分类入口
+  - 后续做论文 error analysis 或 appendix 样本整理时，可以直接复用
